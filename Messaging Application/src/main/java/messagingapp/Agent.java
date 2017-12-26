@@ -45,6 +45,7 @@ public class Agent {
         this.id = id;
         this.name = name;
         sendMessagesCount = 0;
+        mailbox = new Mailbox();
     }
 
     // Initiate contact with a supervisor to get a login key and subsequently logs into the system
