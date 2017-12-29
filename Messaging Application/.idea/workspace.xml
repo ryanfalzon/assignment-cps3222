@@ -21,7 +21,7 @@
     <SUITE FILE_PATH="coverage/Messaging_Application$task1_testLoginUnsuccessful2.coverage" NAME="task1.testLoginUnsuccessful2 Coverage Results" MODIFIED="1514557051954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>messagingapp.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Messaging_Application$task1.coverage" NAME="task1 Coverage Results" MODIFIED="1514557008702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Messaging_Application$task1.coverage" NAME="task1 Coverage Results" MODIFIED="1514558442844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>messagingapp.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Messaging_Application$task1_testLoginSuccessful.coverage" NAME="task1.testLoginSuccessful Coverage Results" MODIFIED="1514304460411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessagingSystem.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessagingSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/MessagingSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="-816">
+              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,8 +48,8 @@
       <file leaf-file-name="Agent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+            <state relative-caret-position="240">
+              <caret line="41" column="75" lean-forward="false" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -58,8 +58,8 @@
       <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="206">
+              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -68,8 +68,8 @@
       <file leaf-file-name="Mailbox.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Mailbox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+            <state relative-caret-position="527">
+              <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -78,18 +78,18 @@
       <file leaf-file-name="LoginKey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/LoginKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="task1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/messagingapp/task1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="416">
+              <caret line="246" column="45" lean-forward="false" selection-start-line="246" selection-start-column="45" selection-end-line="246" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#794#795#0" expanded="true" />
@@ -118,11 +118,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/messagingapp/Key.java" />
         <option value="$PROJECT_DIR$/src/main/java/messagingapp/Supervisor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messagingapp/Message.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/messagingapp/LoginKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messagingapp/Agent.java" />
         <option value="$PROJECT_DIR$/src/main/java/messagingapp/MessagingSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messagingapp/Agent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messagingapp/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messagingapp/LoginKey.java" />
         <option value="$PROJECT_DIR$/src/main/java/messagingapp/Mailbox.java" />
         <option value="$PROJECT_DIR$/src/test/java/messagingapp/task1.java" />
       </list>
@@ -235,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.task1.testLoginUnsuccessful1">
+  <component name="RunManager" selected="JUnit.task1">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -342,56 +342,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="task1.testInvalidMessage4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="messagingapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Messaging Application" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="messagingapp" />
-      <option name="MAIN_CLASS_NAME" value="messagingapp.task1" />
-      <option name="METHOD_NAME" value="testInvalidMessage4" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="task1.testInvalidMessage5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="messagingapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Messaging Application" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="messagingapp" />
-      <option name="MAIN_CLASS_NAME" value="messagingapp.task1" />
-      <option name="METHOD_NAME" value="testInvalidMessage5" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="task1.testLoginUnsuccessful1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -417,7 +367,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="task1.testLoginUnsuccessful2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="task1.testMessagesMailbox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="messagingapp.*" />
@@ -429,7 +379,57 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="messagingapp" />
       <option name="MAIN_CLASS_NAME" value="messagingapp.task1" />
-      <option name="METHOD_NAME" value="testLoginUnsuccessful2" />
+      <option name="METHOD_NAME" value="testMessagesMailbox" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="task1.testNextMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="messagingapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Messaging Application" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="messagingapp" />
+      <option name="MAIN_CLASS_NAME" value="messagingapp.task1" />
+      <option name="METHOD_NAME" value="testNextMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="task1.testNoMessagesMailbox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="messagingapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Messaging Application" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="messagingapp" />
+      <option name="MAIN_CLASS_NAME" value="messagingapp.task1" />
+      <option name="METHOD_NAME" value="testNoMessagesMailbox" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -443,19 +443,19 @@
       <patterns />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.task1.testInvalidMessage4" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.task1.testInvalidMessage5" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.task1" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.task1.testLoginUnsuccessful2" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.task1.testLoginUnsuccessful1" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.task1" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.task1.testLoginUnsuccessful1" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.task1.testMessagesMailbox" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.task1.testNoMessagesMailbox" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.task1.testNextMessage" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.task1.testLoginUnsuccessful1" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.task1.testLoginUnsuccessful2" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.task1" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.task1.testInvalidMessage5" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.task1.testInvalidMessage4" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.task1" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.task1.testNextMessage" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.task1.testNoMessagesMailbox" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.task1.testMessagesMailbox" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.task1.testLoginUnsuccessful1" />
       </list>
     </recent_temporary>
   </component>
@@ -473,35 +473,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="task1 - 2017.12.29 at 15h 16m 49s.xml">
+    <history-entry file="task1 - 2017.12.29 at 15h 29m 51s.xml">
       <configuration name="task1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="task1_testInvalidMessage - 2017.12.29 at 13h 45m 32s.xml">
-      <configuration name="task1.testInvalidMessage" configurationId="JUnit" />
+    <history-entry file="task1 - 2017.12.29 at 15h 31m 10s.xml">
+      <configuration name="task1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="task1_testInvalidMessage - 2017.12.29 at 13h 47m 15s.xml">
-      <configuration name="task1.testInvalidMessage" configurationId="JUnit" />
+    <history-entry file="task1 - 2017.12.29 at 15h 36m 34s.xml">
+      <configuration name="task1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="task1_testInvalidMessage3 - 2017.12.29 at 15h 02m 42s.xml">
-      <configuration name="task1.testInvalidMessage3" configurationId="JUnit" />
+    <history-entry file="task1 - 2017.12.29 at 15h 38m 39s.xml">
+      <configuration name="task1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="task1_testInvalidMessage4 - 2017.12.29 at 15h 06m 05s.xml">
-      <configuration name="task1.testInvalidMessage4" configurationId="JUnit" />
+    <history-entry file="task1 - 2017.12.29 at 15h 39m 13s.xml">
+      <configuration name="task1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="task1_testInvalidMessage4 - 2017.12.29 at 15h 06m 17s.xml">
-      <configuration name="task1.testInvalidMessage4" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="task1_testInvalidMessage4 - 2017.12.29 at 15h 06m 26s.xml">
-      <configuration name="task1.testInvalidMessage4" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="task1_testInvalidMessage5 - 2017.12.29 at 15h 12m 00s.xml">
-      <configuration name="task1.testInvalidMessage5" configurationId="JUnit" />
+    <history-entry file="task1 - 2017.12.29 at 15h 40m 43s.xml">
+      <configuration name="task1" configurationId="JUnit" />
     </history-entry>
     <history-entry file="task1_testLoginUnsuccessful1 - 2017.12.29 at 15h 23m 36s.xml">
       <configuration name="task1.testLoginUnsuccessful1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="task1_testLoginUnsuccessful2 - 2017.12.29 at 15h 17m 32s.xml">
-      <configuration name="task1.testLoginUnsuccessful2" configurationId="JUnit" />
+    <history-entry file="task1_testMessagesMailbox - 2017.12.29 at 15h 34m 00s.xml">
+      <configuration name="task1.testMessagesMailbox" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="task1_testNextMessage - 2017.12.29 at 15h 36m 27s.xml">
+      <configuration name="task1.testNextMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="task1_testNoMessagesMailbox - 2017.12.29 at 15h 34m 58s.xml">
+      <configuration name="task1.testNoMessagesMailbox" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -516,9 +516,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1257353" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25514707" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -795,56 +795,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/LoginKey.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/messagingapp/task1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="416">
+          <caret line="246" column="45" lean-forward="false" selection-start-line="246" selection-start-column="45" selection-end-line="246" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        <state relative-caret-position="240">
+          <caret line="41" column="75" lean-forward="false" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/LoginKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Mailbox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        <state relative-caret-position="527">
+          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messagingapp/MessagingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="-816">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/messagingapp/task1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
           </folding>
         </state>
       </provider>

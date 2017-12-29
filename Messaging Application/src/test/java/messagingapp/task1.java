@@ -180,4 +180,70 @@ public class task1 {
         // Verify
         assertEquals("Message Not Sent", message);
     }
+
+    @Test
+    // Test whether mailbox contains messages true
+    public void testMessagesMailbox(){
+
+        // Specify the return of the method without even having an implementation and login the agent and send message
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+        Agent targetAgent = new Agent("002", "Kristi");
+        system.sendMessage(agent, targetAgent, "Hello, How Are You?");
+
+        // Exercise
+        boolean message = targetAgent.getMailbox().hasMessages();
+
+        // Verify
+        assertEquals(true, message);
+    }
+
+    @Test
+    // Test whether mailbox contains messages false
+    public void testNoMessagesMailbox(){
+
+        // Specify the return of the method without even having an implementation and login the agent and send message
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+        Agent targetAgent = new Agent("002", "Kristi");
+
+        // Exercise
+        boolean message = targetAgent.getMailbox().hasMessages();
+
+        // Verify
+        assertEquals(false, message);
+    }
+
+    @Test
+    // Test getting the next message in the mailbox
+    public void testNextMessage(){
+
+        // Specify the return of the method without even having an implementation and login the agent and send message
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+        Agent targetAgent = new Agent("002", "Kristi");
+        system.sendMessage(agent, targetAgent, "Hello, How Are You?");
+
+        // Exercise
+        String message = targetAgent.getMailbox().consumeNextMessage();
+
+        // Verify
+        assertEquals("Hello, How Are You?", message);
+    }
+
+    @Test
+    // Test getting the next message in the mailbox when empty
+    public void testNextMessageEmpty(){
+
+        // Specify the return of the method without even having an implementation and login the agent and send message
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+        Agent targetAgent = new Agent("002", "Kristi");
+
+        // Exercise
+        String message = targetAgent.getMailbox().consumeNextMessage();
+
+        // Verify
+        assertEquals("Mailbox Empty", message);
+    }
 }

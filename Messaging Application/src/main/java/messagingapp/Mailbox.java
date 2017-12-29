@@ -30,15 +30,15 @@ public class Mailbox {
     }
 
     // Returns the next message in the box on a FIFO bases
-    public Message consumeNextMessage(){
+    public String consumeNextMessage(){
 
         // Return message if not empty
-        if(counter <= messages.size()){
-            return messages.get(counter);
+        if(counter < messages.size()){
+            return messages.get(counter).getMessage();
         }
         // Return null if empty
         else{
-            return null;
+            return "Mailbox Empty";
         }
     }
 

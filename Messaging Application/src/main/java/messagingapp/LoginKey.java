@@ -27,11 +27,6 @@ public class LoginKey {
         this.agentId = adentId;
     }
 
-    // Default constructor
-    public LoginKey(){
-
-    }
-
     // Constructor
     public LoginKey(String key, long timestamp, String agentId){
         this.key = key;

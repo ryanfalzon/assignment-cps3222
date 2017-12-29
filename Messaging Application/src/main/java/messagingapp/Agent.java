@@ -41,13 +41,6 @@ public class Agent {
     public int getSentCount() { return sentCount; }
     public void setSentCount(int sentCount) { this.sentCount = sentCount; }
 
-    // Default constructor
-    public Agent(){
-        receivecCount = 0;
-        sentCount = 0;
-        this.sessionId = "";
-    }
-
     // Constructor
     public Agent(String id, String name){
         this.id = id;

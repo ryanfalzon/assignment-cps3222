@@ -34,11 +34,6 @@ public class Message {
         this.message = message;
     }
 
-    // Default constructor
-    public Message(){
-
-    }
-
     // Constructor
     public Message(Agent sourceAgent, Agent targetAgent, long timestamp, String message) {
         this.sourceAgent = sourceAgent;
