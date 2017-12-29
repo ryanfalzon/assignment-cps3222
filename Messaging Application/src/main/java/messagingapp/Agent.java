@@ -7,7 +7,8 @@ public class Agent {
     private String name;
     private String sessionId;
     private Mailbox mailbox;
-    private int sendMessagesCount;
+    private int sentCount;
+    private int receivecCount;
     private Supervisor supervisor;
 
     // Getters and setters
@@ -35,17 +36,25 @@ public class Agent {
     public void setMailbox(Mailbox mailbox) {
         this.mailbox = mailbox;
     }
+    public int getReceivecCount() { return receivecCount; }
+    public void setReceivecCount(int receivecCount) { this.receivecCount = receivecCount; }
+    public int getSentCount() { return sentCount; }
+    public void setSentCount(int sentCount) { this.sentCount = sentCount; }
 
     // Default constructor
     public Agent(){
-        sendMessagesCount = 0;
+        receivecCount = 0;
+        sentCount = 0;
+        this.sessionId = "";
     }
 
     // Constructor
     public Agent(String id, String name){
         this.id = id;
         this.name = name;
-        sendMessagesCount = 0;
+        this.sessionId = "";
+        receivecCount = 0;
+        sentCount = 0;
         mailbox = new Mailbox();
     }
 
@@ -57,21 +66,23 @@ public class Agent {
     }
 
     // Sends a message to the destination agent
-    public boolean sendMessage(Agent destinationAgent, String message, MessagingSystem system){
+    public boolean sendMessage(Agent destinationAgent, Message message)
+    {
+        // Check how many messages the sender has sent
+        if(sentCount < 25){
 
-        if(sendMessagesCount < 25){
-
-            // Return true if successful
-            if((system.sendMessage(this, destinationAgent, message) != null)){
+            // Check how many messages the receiver has sent
+            if(destinationAgent.getReceivecCount() < 25){
+                destinationAgent.getMailbox().getMessages().add(message);
                 return true;
             }
-            // Return false otherwise
             else{
+                destinationAgent.setSessionId(null);
                 return false;
             }
         }
         else{
-            this.sessionId = null;
+            this.setSessionId(null);
             return false;
         }
     }

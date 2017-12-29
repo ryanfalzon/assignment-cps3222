@@ -51,10 +51,22 @@ public class task1 {
         assertEquals( "Login Successful", message);
     }
 
+    @Test
+    // Test invalid login key with different agent
+    public void testLoginUnsuccessful1(){
+        // Specify the return of the method without even having an implementation
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(INVALID_KEY, System.currentTimeMillis(), "000"));
+
+        // Exercise
+        String message = system.login(agent);
+
+        // Verify
+        assertEquals( "Login Unsuccessful", message);
+    }
 
     @Test
     // Test unsuccessful login with invalid login key
-    public void testLoginUnsuccessful1()
+    public void testLoginUnsuccessful2()
     {
         // Specify the return of the method without even having an implementation
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(INVALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -68,7 +80,7 @@ public class task1 {
 
     @Test
     // Test unsuccessful login with valid login key but expired timestamp
-    public void testLoginUnsuccessful2()
+    public void testLoginUnsuccessful3()
     {
         // Specify the return of the method without even having an implementation
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis() - 70000, agent.getId()));
@@ -78,5 +90,94 @@ public class task1 {
 
         // Verify
         assertEquals( "Login Unsuccessful", message);
+    }
+
+    @Test
+    // Test a valid message
+    public void testValidMessage(){
+
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+
+        // Exercise
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, How Are You?");
+
+        // Verify
+        assertEquals("Message Sent", message);
+    }
+
+    @Test
+    // Test an invalid message while not logged in
+    public void testInvalidMessage1(){
+
+        // Exercise
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, how are you?");
+
+        // Verify
+        assertEquals("Message Not Sent", message);
+    }
+
+    @Test
+    // Test an invalid message that contains blocked words
+    public void testInvalidMessage2(){
+
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+
+        // Exercise
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Does it contain ginger?");
+
+        // Verify
+        assertEquals("Message Not Sent", message);
+    }
+
+    @Test
+    // Test an invalid message longer than 140 characters
+    public void testInvalidMessage3(){
+
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+
+        // Exercise
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij");
+
+        // Verify
+        assertEquals("Message Not Sent", message);
+    }
+
+    @Test
+    // Test an invalid message whose source exceeds 25 messages
+    public void testInvalidMessage4(){
+
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+        agent.setSentCount(26);
+
+        // Exercise
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, how are you?");
+
+        // Verify
+        assertEquals("Message Not Sent", message);
+    }
+
+    @Test
+    // Test an invalid message whose receiver exceeds 25 messages
+    public void testInvalidMessage5(){
+
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
+        system.login(agent);
+        Agent targetAgent = new Agent("002", "Kristi");
+        targetAgent.setReceivecCount(26);
+
+        // Exercise
+        String message = system.sendMessage(agent, targetAgent, "Hello, how are you?");
+
+        // Verify
+        assertEquals("Message Not Sent", message);
     }
 }

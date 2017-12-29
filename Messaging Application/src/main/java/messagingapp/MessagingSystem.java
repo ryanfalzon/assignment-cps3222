@@ -66,7 +66,8 @@ public class MessagingSystem {
             loginKey.setAgentId(agent.getId());
             keys.add(loginKey);
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }
@@ -86,26 +87,35 @@ public class MessagingSystem {
     }
 
     // Sends a message from the sourceAgent to the targetAgent. Creates a message object and stores it in the targetAgent's mailbox
-    public String sendMessage(Agent sourceAgent, Agent targetAgent, String message){
+    public String sendMessage(Agent sourceAgent, Agent targetAgent, String message)
+    {
+        // Check that the sourceAgent is the same as the one currently logged in
+        if(sourceAgent.getSessionId().equals(this.sessionKey)){
 
-        // Check that targetAgent has not received more than 25 messages
-        if(targetAgent.getMailbox().getCounter() < 25){
-
-            // Check that the sourceAgent is the same as the one currently logged in
             // Check that a message does not contain any blocked words
-            // Check that a message is not longer than 140 characters
-            if((sourceAgent.getSessionId().equals(this.sessionKey)) && checkMessage(message) && (message.length() <= 140)){
-                Message m = new Message(sourceAgent, targetAgent, System.currentTimeMillis(), message);
-                targetAgent.getMailbox().getMessages().add(m);
-                return "Ok";
+            if(checkMessage(message)){
+
+                // Check that a message is not longer than 140 characters
+                if(message.length() <= 140){
+
+                    // Try to send message
+                    if(sourceAgent.sendMessage(targetAgent, new Message(sourceAgent, targetAgent, System.currentTimeMillis(), message))){
+                        return "Message Sent";
+                    }
+                    else{
+                        return "Message Not Sent";
+                    }
+                }
+                else{
+                    return "Message Not Sent";
+                }
             }
             else{
-                return null;
+                return "Message Not Sent";
             }
         }
         else{
-            targetAgent.setSessionId(null);
-            return null;
+            return "Message Not Sent";
         }
     }
 
@@ -117,11 +127,11 @@ public class MessagingSystem {
 
             // If string contains current element
             if(message.contains(blockedWords.get(i))){
-                return true;
+                return false;
             }
         }
 
         // If message does not contain a blocked word
-        return false;
+        return true;
     }
 }
