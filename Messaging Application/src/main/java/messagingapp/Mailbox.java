@@ -24,33 +24,33 @@ public class Mailbox {
     }
 
     // Default constructor
-    public Mailbox(){
+    public Mailbox() {
         this.messages = new ArrayList<Message>();
         counter = 0;
     }
 
     // Returns the next message in the box on a FIFO bases
-    public String consumeNextMessage(){
+    public String consumeNextMessage() {
 
         // Return message if not empty
-        if(counter < messages.size()){
+        if (counter < messages.size()) {
             return messages.get(counter).getMessage();
         }
         // Return null if empty
-        else{
+        else {
             return "Mailbox Empty";
         }
     }
 
     // Check if there are any messages in the mailbox
-    public boolean hasMessages(){
+    public boolean hasMessages() {
 
         // Return true if there is at least one message
-        if(messages.size() > 0){
+        if (messages.size() > 0) {
             return true;
         }
         // Return false if empty
-        else{
+        else {
             return false;
         }
     }

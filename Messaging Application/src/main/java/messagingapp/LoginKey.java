@@ -8,10 +8,10 @@ public class LoginKey {
     private String agentId;
 
     // Getters and setters
-    public String getKey(){
+    public String getKey() {
         return this.key;
     }
-    public void setKey(String key){
+    public void setKey(String key) {
         this.key = key;
     }
     public long getTimestamp() {
@@ -28,7 +28,7 @@ public class LoginKey {
     }
 
     // Constructor
-    public LoginKey(String key, long timestamp, String agentId){
+    public LoginKey(String key, long timestamp, String agentId) {
         this.key = key;
         this.timestamp = timestamp;
         this.agentId = agentId;

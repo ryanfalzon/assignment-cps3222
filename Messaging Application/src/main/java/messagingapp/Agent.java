@@ -36,10 +36,18 @@ public class Agent {
     public void setMailbox(Mailbox mailbox) {
         this.mailbox = mailbox;
     }
-    public int getReceivecCount() { return receivecCount; }
-    public void setReceivecCount(int receivecCount) { this.receivecCount = receivecCount; }
-    public int getSentCount() { return sentCount; }
-    public void setSentCount(int sentCount) { this.sentCount = sentCount; }
+    public int getReceivecCount() {
+        return receivecCount;
+    }
+    public void setReceivecCount(int receivecCount) {
+        this.receivecCount = receivecCount;
+    }
+    public int getSentCount() {
+        return sentCount;
+    }
+    public void setSentCount(int sentCount) {
+        this.sentCount = sentCount;
+    }
 
     // Constructor
     public Agent(String id, String name){
@@ -54,6 +62,7 @@ public class Agent {
     // Initiate contact with a supervisor to get a login key and subsequently logs into the system
     public LoginKey login(){
 
+        // Contact the supervisor
         LoginKey loginKey = supervisor.getLoginKey(this);
         return loginKey;
     }

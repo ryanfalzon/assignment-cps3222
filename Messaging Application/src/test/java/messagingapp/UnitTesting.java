@@ -7,10 +7,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.when;
 
-public class task1 {
+public class UnitTesting {
 
     // Private properties
     private MessagingSystem system;
@@ -23,7 +23,7 @@ public class task1 {
     private Agent agent;
 
     @Before
-    public void Setup(){
+    public void Setup() {
         system = new MessagingSystem();
         agent = new Agent("001", "Ryan");
 
@@ -32,15 +32,13 @@ public class task1 {
     }
 
     @After
-    public void tearDown()
-    {
+    public void tearDown() {
         system = null;
     }
 
     @Test
     // Test successful login with valid login key and valid timestamp
-    public void testLoginSuccessful()
-    {
+    public void testLoginSuccessful() {
         // Specify the return of the method without even having an implementation
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
 
@@ -48,12 +46,12 @@ public class task1 {
         String message = system.login(agent);
 
         // Verify
-        assertEquals( "Login Successful", message);
+        assertEquals("Login Successful", message);
     }
 
     @Test
     // Test invalid login key with different agent
-    public void testLoginUnsuccessful1(){
+    public void testLoginUnsuccessful1() {
         // Specify the return of the method without even having an implementation
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(INVALID_KEY, System.currentTimeMillis(), "000"));
 
@@ -61,13 +59,12 @@ public class task1 {
         String message = system.login(agent);
 
         // Verify
-        assertEquals( "Login Unsuccessful", message);
+        assertEquals("Login Unsuccessful", message);
     }
 
     @Test
     // Test unsuccessful login with invalid login key
-    public void testLoginUnsuccessful2()
-    {
+    public void testLoginUnsuccessful2() {
         // Specify the return of the method without even having an implementation
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(INVALID_KEY, System.currentTimeMillis(), agent.getId()));
 
@@ -75,13 +72,12 @@ public class task1 {
         String message = system.login(agent);
 
         // Verify
-        assertEquals( "Login Unsuccessful", message);
+        assertEquals("Login Unsuccessful", message);
     }
 
     @Test
     // Test unsuccessful login with valid login key but expired timestamp
-    public void testLoginUnsuccessful3()
-    {
+    public void testLoginUnsuccessful3() {
         // Specify the return of the method without even having an implementation
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis() - 70000, agent.getId()));
 
@@ -89,12 +85,12 @@ public class task1 {
         String message = system.login(agent);
 
         // Verify
-        assertEquals( "Login Unsuccessful", message);
+        assertEquals("Login Unsuccessful", message);
     }
 
     @Test
     // Test a valid message
-    public void testValidMessage(){
+    public void testValidMessage() {
 
         // Specify the return of the method without even having an implementation and login the agent
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -109,7 +105,7 @@ public class task1 {
 
     @Test
     // Test an invalid message while not logged in
-    public void testInvalidMessage1(){
+    public void testInvalidMessage1() {
 
         // Exercise
         String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, how are you?");
@@ -120,7 +116,7 @@ public class task1 {
 
     @Test
     // Test an invalid message that contains blocked words
-    public void testInvalidMessage2(){
+    public void testInvalidMessage2() {
 
         // Specify the return of the method without even having an implementation and login the agent
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -135,7 +131,7 @@ public class task1 {
 
     @Test
     // Test an invalid message longer than 140 characters
-    public void testInvalidMessage3(){
+    public void testInvalidMessage3() {
 
         // Specify the return of the method without even having an implementation and login the agent
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -150,7 +146,7 @@ public class task1 {
 
     @Test
     // Test an invalid message whose source exceeds 25 messages
-    public void testInvalidMessage4(){
+    public void testInvalidMessage4() {
 
         // Specify the return of the method without even having an implementation and login the agent
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -166,7 +162,7 @@ public class task1 {
 
     @Test
     // Test an invalid message whose receiver exceeds 25 messages
-    public void testInvalidMessage5(){
+    public void testInvalidMessage5() {
 
         // Specify the return of the method without even having an implementation and login the agent
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -183,7 +179,7 @@ public class task1 {
 
     @Test
     // Test whether mailbox contains messages true
-    public void testMessagesMailbox(){
+    public void testMessagesMailbox() {
 
         // Specify the return of the method without even having an implementation and login the agent and send message
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -200,7 +196,7 @@ public class task1 {
 
     @Test
     // Test whether mailbox contains messages false
-    public void testNoMessagesMailbox(){
+    public void testNoMessagesMailbox() {
 
         // Specify the return of the method without even having an implementation and login the agent and send message
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -216,7 +212,7 @@ public class task1 {
 
     @Test
     // Test getting the next message in the mailbox
-    public void testNextMessage(){
+    public void testNextMessage() {
 
         // Specify the return of the method without even having an implementation and login the agent and send message
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
@@ -233,7 +229,7 @@ public class task1 {
 
     @Test
     // Test getting the next message in the mailbox when empty
-    public void testNextMessageEmpty(){
+    public void testNextMessageEmpty() {
 
         // Specify the return of the method without even having an implementation and login the agent and send message
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
