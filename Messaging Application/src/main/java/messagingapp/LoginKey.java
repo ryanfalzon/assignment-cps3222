@@ -33,8 +33,9 @@ public class LoginKey {
     }
 
     // Constructor
-    public LoginKey(String key, long timestamp){
+    public LoginKey(String key, long timestamp, String agentId){
         this.key = key;
         this.timestamp = timestamp;
+        this.agentId = agentId;
     }
 }

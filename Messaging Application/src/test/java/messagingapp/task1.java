@@ -29,9 +29,6 @@ public class task1 {
 
         // Initiate mockito
         MockitoAnnotations.initMocks(this);
-
-        // Specify the return of the method without even having an implementation
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
     }
 
     @After
@@ -41,22 +38,45 @@ public class task1 {
     }
 
     @Test
+    // Test successful login with valid login key and valid timestamp
     public void testLoginSuccessful()
     {
-        //Exercise
-        boolean message = agent.login(supervisor, system);
+        // Specify the return of the method without even having an implementation
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
 
-        //Verify
-        assertEquals( true, message);
+        // Exercise
+        String message = system.login(agent);
+
+        // Verify
+        assertEquals( "Login Successful", message);
+    }
+
+
+    @Test
+    // Test unsuccessful login with invalid login key
+    public void testLoginUnsuccessful1()
+    {
+        // Specify the return of the method without even having an implementation
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(INVALID_KEY, System.currentTimeMillis(), agent.getId()));
+
+        // Exercise
+        String message = system.login(agent);
+
+        // Verify
+        assertEquals( "Login Unsuccessful", message);
     }
 
     @Test
-    public void testLoginUnsuccessful()
+    // Test unsuccessful login with valid login key but expired timestamp
+    public void testLoginUnsuccessful2()
     {
-        //Exercise
-        String message = system.login(new Agent("001", "Ryan"), new LoginKey("000000000", System.currentTimeMillis()));
+        // Specify the return of the method without even having an implementation
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis() - 70000, agent.getId()));
 
-        //Verify
-        assertEquals( null, message);
+        // Exercise
+        String message = system.login(agent);
+
+        // Verify
+        assertEquals( "Login Unsuccessful", message);
     }
 }

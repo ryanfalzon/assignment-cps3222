@@ -8,6 +8,7 @@ public class Agent {
     private String sessionId;
     private Mailbox mailbox;
     private int sendMessagesCount;
+    private Supervisor supervisor;
 
     // Getters and setters
     public String getId(){
@@ -49,18 +50,10 @@ public class Agent {
     }
 
     // Initiate contact with a supervisor to get a login key and subsequently logs into the system
-    public boolean login(Supervisor supervisor, MessagingSystem system){
+    public LoginKey login(){
 
         LoginKey loginKey = supervisor.getLoginKey(this);
-
-        // Return true if successful
-        if(system.login(this, loginKey) != null){
-            return true;
-        }
-        // Return false otherwise
-        else{
-            return false;
-        }
+        return loginKey;
     }
 
     // Sends a message to the destination agent
