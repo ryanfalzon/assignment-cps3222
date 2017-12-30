@@ -3,4 +3,45 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    
+    <servlet>
+        <servlet-name>ContactSupervisor</servlet-name>
+        <servlet-class>servlets.ContactSupervisor</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ContactSupervisor</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginCheck</servlet-name>
+        <servlet-class>servlets.LoginCheck</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginCheck</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendMessage</servlet-name>
+        <servlet-class>servlets.SendMessage</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendMessage</servlet-name>
+        <url-pattern>/message</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MailboxRequests</servlet-name>
+        <servlet-class>servlets.MailboxRequests</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MailboxRequests</servlet-name>
+        <url-pattern>/mailbox</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

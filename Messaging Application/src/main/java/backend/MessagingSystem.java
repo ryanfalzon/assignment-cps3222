@@ -1,5 +1,7 @@
 package backend;
 
+import servlets.StaticVariables;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,8 +10,6 @@ import java.util.Random;
 public class MessagingSystem {
 
     // Private properties
-    private List<LoginKey> keys;
-    private String sessionKey;
     public List<String> blockedWords;
 
     // Private final variables for session key generation
@@ -20,48 +20,43 @@ public class MessagingSystem {
 
     // Default constructor
     public MessagingSystem() {
-        this.keys = new ArrayList<LoginKey>();
         this.blockedWords = Arrays.asList("recipe", "ginger", "nuclear");
     }
 
     // Logs in a user given an agent id and key
-    public String login(Agent agent) {
-
-        // Call the login method of the agent
-        LoginKey keyToValidate = agent.login();
+    public String login(Agent agent, String key) {
 
         // Check that the key is not older than 1 minute
-        if ((System.currentTimeMillis() - keyToValidate.getTimestamp()) <= 60000) {
+        if (registerLoginKey(key)) {
 
             // Check if the agent's ID matches the login key
-            if (agent.getId().equals(keyToValidate.getAgentId())) {
+            if (agent.getKey().getKey().equals(key)) {
 
                 // Register the login key
-                if (registerLoginKey(keyToValidate, agent)) {
+                if ((System.currentTimeMillis() - agent.getKey().getTimestamp()) <= 60000) {
 
                     // Set session key of agent and system
                     String sk = getSessionKey(50);
-                    this.sessionKey = sk;
+                    StaticVariables.sessionId = sk;
                     agent.setSessionId(sk);
                     return "Login Successful";
                 } else {
-                    return "Login Unsuccessful";
+                    return "Login Unsuccessful - Expired Login Key";
                 }
             } else {
-                return "Login Unsuccessful";
+                return "Login Unsuccessful - Agent ID and Login Key Do Not Match";
             }
         } else {
-            return "Login Unsuccessful";
+            return "Login Unsuccessful - Invalid Login Key";
         }
     }
 
     // Takes a login key and agentId such that when an agent with that id tries to login she will only be allowed access if the key also matches
-    public boolean registerLoginKey(LoginKey loginKey, Agent agent) {
+    public boolean registerLoginKey(String loginKey) {
 
         // This method also checks that the login key is exactly 10 characters long and that the key is unique
-        if ((loginKey.getKey().length() == 10) && (!keys.contains(loginKey))) {
-            loginKey.setAgentId(agent.getId());
-            keys.add(loginKey);
+        if ((loginKey.length() == 10) && (!StaticVariables.keys.contains(loginKey))) {
+            StaticVariables.keys.add(loginKey);
             return true;
         } else {
             return false;
@@ -78,35 +73,34 @@ public class MessagingSystem {
         for (int i = 0; i < counter; i++) {
             sessionKey += alphanumerical.charAt(random.nextInt(alphanumerical.length()));
         }
-
         return sessionKey;
     }
 
-    // Sends a message from the sourceAgent to the targetAgent. Creates a message object and stores it in the targetAgent's mailbox
+    // Sends a SendMessage from the sourceAgent to the targetAgent. Creates a SendMessage object and stores it in the targetAgent's mailbox
     public String sendMessage(Agent sourceAgent, Agent targetAgent, String message) {
         // Check that the sourceAgent is the same as the one currently logged in
-        if (sourceAgent.getSessionId().equals(this.sessionKey)) {
+        if (sourceAgent.getSessionId().equals(StaticVariables.sessionId)) {
 
-            // Check that a message does not contain any blocked words
+            // Check that a SendMessage does not contain any blocked words
             if (checkMessage(message)) {
 
-                // Check that a message is not longer than 140 characters
+                // Check that a SendMessage is not longer than 140 characters
                 if (message.length() <= 140) {
 
-                    // Try to send message
+                    // Try to send SendMessage
                     if (sourceAgent.sendMessage(targetAgent, new Message(sourceAgent, targetAgent, System.currentTimeMillis(), message))) {
                         return "Message Sent";
                     } else {
-                        return "Message Not Sent";
+                        return "Message Not Sent - Error While Sending";
                     }
                 } else {
-                    return "Message Not Sent";
+                    return "Message Not Sent - Message Exceeds 140 Characters";
                 }
             } else {
-                return "Message Not Sent";
+                return "Message Not Sent - Message Contains Blocked Words";
             }
         } else {
-            return "Message Not Sent";
+            return "Message Not Sent - Source Agent Does Not Match Logged-in User";
         }
     }
 
@@ -122,7 +116,7 @@ public class MessagingSystem {
             }
         }
 
-        // If message does not contain a blocked word
+        // If SendMessage does not contain a blocked word
         return true;
     }
 }

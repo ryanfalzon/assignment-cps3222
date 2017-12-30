@@ -6,10 +6,17 @@ import java.util.List;
 public class Mailbox {
 
     // Private properties
+    private String agentID;
     private List<Message> messages;
     private int counter;
 
     // Getters and setters
+    public String getAgentID() {
+        return agentID;
+    }
+    public void setAgentID(String agentID) {
+        this.agentID = agentID;
+    }
     public List<Message> getMessages() {
         return this.messages;
     }
@@ -24,28 +31,29 @@ public class Mailbox {
     }
 
     // Default constructor
-    public Mailbox() {
+    public Mailbox(String agentID) {
+        this.agentID = agentID;
         this.messages = new ArrayList<Message>();
-        counter = 0;
+        this.counter = 0;
     }
 
-    // Returns the next message in the box on a FIFO bases
+    // Returns the next SendMessage in the box on a FIFO bases
     public String consumeNextMessage() {
 
-        // Return message if not empty
+        // Return SendMessage if not empty
         if (counter < messages.size()) {
             return messages.get(counter).getMessage();
         }
         // Return null if empty
         else {
-            return "Mailbox Empty";
+            return "MailboxRequests Empty";
         }
     }
 
     // Check if there are any messages in the mailbox
     public boolean hasMessages() {
 
-        // Return true if there is at least one message
+        // Return true if there is at least one SendMessage
         if (messages.size() > 0) {
             return true;
         }

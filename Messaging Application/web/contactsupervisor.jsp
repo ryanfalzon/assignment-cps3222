@@ -27,7 +27,7 @@
     <div class="container">
         <h2>Your Supervisor is John Doe</h2>
         <h3>Please enter the following details to be given a login key.</h3>
-        <form action="LoginCheck.jsp" method="post">
+        <form action="/contact" method="post">
             <label>ID</label>
             <input type="text" name="id"><br />
             <label>Name</label>

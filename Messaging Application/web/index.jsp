@@ -15,6 +15,7 @@
             width: 500px;
             clear: both;
             text-align: center;
+            align-self: center;
         }
         .container input {
             width: 250px;

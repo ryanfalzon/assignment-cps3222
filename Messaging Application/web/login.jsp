@@ -27,11 +27,11 @@
 <div class="container">
     <h2>Login Page</h2>
     <h3>Please enter the following details to be logged in to the system.</h3>
-    <form action="LoginCheck.jsp" method="post">
+    <form action="/login" method="post">
         <label>ID</label>
         <input type="text" name="id"><br />
         <label>Login Key</label>
-        <input type="text" name="name"><br /><br />
+        <input type="text" name="loginkey"><br /><br />
         <input type="submit" value="Login">
     </form>
 </div>

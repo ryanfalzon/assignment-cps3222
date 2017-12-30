@@ -5,7 +5,6 @@ public class LoginKey {
     // Private properties
     private String key;
     private long timestamp;
-    private String agentId;
 
     // Getters and setters
     public String getKey() {
@@ -20,17 +19,10 @@ public class LoginKey {
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
-    public String getAgentId() {
-        return this.agentId;
-    }
-    public void setAgentId(String adentId) {
-        this.agentId = adentId;
-    }
 
     // Constructor
-    public LoginKey(String key, long timestamp, String agentId) {
+    public LoginKey(String key, long timestamp) {
         this.key = key;
         this.timestamp = timestamp;
-        this.agentId = agentId;
     }
 }

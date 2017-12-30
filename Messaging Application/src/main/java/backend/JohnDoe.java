@@ -1,5 +1,6 @@
 package backend;
 
+import servlets.StaticVariables;
 import java.util.Random;
 
 public class JohnDoe implements Supervisor {
@@ -18,12 +19,12 @@ public class JohnDoe implements Supervisor {
             return null;
         }
         else{
-            return new LoginKey(getloginKey(10), System.currentTimeMillis(), agent.getId());
+            return new LoginKey(key(10), System.currentTimeMillis());
         }
     }
 
     // Method to generate a session key
-    public String getloginKey(int counter) {
+    public String key(int counter) {
 
         Random random = new Random();
         String sessionKey = "";
@@ -33,6 +34,12 @@ public class JohnDoe implements Supervisor {
             sessionKey += alphanumerical.charAt(random.nextInt(alphanumerical.length()));
         }
 
-        return sessionKey;
+        // Check if login key is unique
+        if(StaticVariables.keys.contains(sessionKey)){
+            return key(counter);
+        }
+        else{
+            return sessionKey;
+        }
     }
 }
