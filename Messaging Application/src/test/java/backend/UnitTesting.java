@@ -1,4 +1,4 @@
-package messagingapp;
+package backend;
 
 import org.junit.After;
 import org.junit.Before;

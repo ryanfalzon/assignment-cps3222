@@ -1,4 +1,4 @@
-package messagingapp;
+package backend;
 
 public class LoginKey {
 
