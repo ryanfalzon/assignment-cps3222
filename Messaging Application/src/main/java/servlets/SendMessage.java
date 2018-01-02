@@ -3,6 +3,7 @@ package servlets;
 import backend.Agent;
 import backend.MessagingSystem;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,7 +44,11 @@ public class SendMessage extends HttpServlet {
         }
 
         // Send message
-        out.write(system.sendMessage(sourceAgent, targetAgent, request.getParameter("message")));
+        session.setAttribute("error", system.sendMessage(sourceAgent, targetAgent, request.getParameter("message")));
+        session.setAttribute("hasmessages", "");
+        session.setAttribute("message", "");
+        RequestDispatcher rd  = request.getRequestDispatcher("/message.jsp");
+        rd.forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

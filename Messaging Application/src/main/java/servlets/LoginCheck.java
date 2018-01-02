@@ -32,14 +32,25 @@ public class LoginCheck extends HttpServlet {
         // Check if current agent exists
         if(current != null){
             MessagingSystem system = new MessagingSystem();
-            if(system.login(current, request.getParameter("loginkey")).equals("Login Successful")){
+            String message = system.login(current, request.getParameter("loginkey"));
+            if(message.equals("Login Successful")){
                 session.setAttribute("id", current.getId());
+                session.setAttribute("error", "");
+                session.setAttribute("hasmessages", "");
+                session.setAttribute("message", "");
                 RequestDispatcher rd  = request.getRequestDispatcher("/message.jsp");
+                rd.forward(request,response);
+            }
+            else{
+                session.setAttribute("errorlogin", message);
+                RequestDispatcher rd  = request.getRequestDispatcher("/login.jsp");
                 rd.forward(request,response);
             }
         }
         else{
-            out.write("ID Does Not Exist!");
+            session.setAttribute("errorlogin", "ID Does Not Exist");
+            RequestDispatcher rd  = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request,response);
         }
     }
 

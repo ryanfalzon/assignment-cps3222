@@ -2,6 +2,7 @@ package servlets;
 
 import backend.Mailbox;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,19 +30,23 @@ public class MailboxRequests extends HttpServlet {
         // Check which button has been pressed
         if(request.getParameter("count") != null){
             if(current != null){
-                out.write(String.valueOf(current.hasMessages()));
+                session.setAttribute("hasmessages", current.hasMessages());
             }
             else{
-                out.write("No Messages");
+                session.setAttribute("hasmessages", "false");
             }
+            RequestDispatcher rd  = request.getRequestDispatcher("/message.jsp");
+            rd.forward(request,response);
         }
         else if(request.getParameter("next") != null){
             if(current != null){
-                out.write(current.consumeNextMessage());
+                session.setAttribute("message", current.consumeNextMessage());
             }
             else{
-                out.write("No Messages");
+                session.setAttribute("message", "Mailbox Empty");
             }
+            RequestDispatcher rd  = request.getRequestDispatcher("/message.jsp");
+            rd.forward(request,response);
         }
     }
 

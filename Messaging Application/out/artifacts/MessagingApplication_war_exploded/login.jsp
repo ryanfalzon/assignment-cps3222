@@ -20,6 +20,9 @@
             width: 100%;
             clear: both;
         }
+        .container p{
+            color: red;
+        }
     </style>
 </head>
 
@@ -31,7 +34,8 @@
         <label>ID</label>
         <input type="text" name="id"><br />
         <label>Login Key</label>
-        <input type="text" name="loginkey"><br /><br />
+        <input type="text" name="loginkey"><br />
+        <p>${errorlogin}</p>
         <input type="submit" value="Login">
     </form>
 </div>

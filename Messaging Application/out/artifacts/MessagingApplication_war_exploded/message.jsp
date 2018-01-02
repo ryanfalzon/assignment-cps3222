@@ -21,6 +21,9 @@
             width: 75%;
             clear: both;
         }
+        .error{
+            color: red;
+        }
     </style>
 </head>
 
@@ -31,12 +34,16 @@
     <form action="/message" method="post">
         <label>Target Agent ID</label>
         <input type="text" name="targetagent"><br /><br />
-        <textarea rows="4" cols="50" name="message"></textarea><br /><br />
+        <textarea rows="4" cols="50" name="message"></textarea><br />
+        <p class="error">${error}</p>
         <input type="submit" value="Submit Message">
     </form>
     <form action="/mailbox" method="post">
         <input type="submit" value="Check If You Have Messages" name="count">
+        <p>${hasmessages}</p>
         <input type="submit" value="Get Next Message" name="next">
+        <h4>Current Message</h4>
+        <p>${message}</p>
     </form>
     <form action="/login" method="post">
         <input type="submit" value="Logout"><br /><br />

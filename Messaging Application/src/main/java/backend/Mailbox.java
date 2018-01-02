@@ -42,11 +42,12 @@ public class Mailbox {
 
         // Return SendMessage if not empty
         if (counter < messages.size()) {
-            return messages.get(counter).getMessage();
+            counter++;
+            return messages.get(counter--).getMessage();
         }
         // Return null if empty
         else {
-            return "MailboxRequests Empty";
+            return "Mailbox Empty";
         }
     }
 
