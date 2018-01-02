@@ -32,7 +32,7 @@
             <input type="text" name="id"><br />
             <label>Name</label>
             <input type="text" name="name"><br /><br />
-            <input type="submit" value="Get Login Key">
+            <input type="submit" value="Get Login Key" name="getKeyButton">
         </form>
     </div>
 </body>

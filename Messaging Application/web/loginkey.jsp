@@ -25,12 +25,12 @@
 
 <body>
 <div class="container">
-    <h2>${approval}</h2>
+    <h2 name="approved">${approval}</h2>
     <h3>Agent ID: ${id}</h3>
     <h3>Agent Name: ${name}</h3>
     <h3>Login Key: ${loginkey}</h3>
     <form action="/index.jsp" method="post">
-        <input type="submit" value="Back To Main Menu"><br /><br />
+        <input type="submit" value="Back To Main Menu" name="backButton"><br /><br />
     </form>
 </div>
 </body>
