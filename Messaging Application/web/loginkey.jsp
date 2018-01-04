@@ -25,10 +25,10 @@
 
 <body>
 <div class="container">
-    <h2 name="approved">${approval}</h2>
-    <h3>Agent ID: ${id}</h3>
-    <h3>Agent Name: ${name}</h3>
-    <h3>Login Key: ${loginkey}</h3>
+    <h2 id="approved">${approval}</h2>
+    <h3 id="id">Agent ID: ${id}</h3>
+    <h3 id="name">Agent Name: ${name}</h3>
+    <h3 id="loginkey">Login Key: ${loginkey}</h3>
     <form action="/index.jsp" method="post">
         <input type="submit" value="Back To Main Menu" name="backButton"><br /><br />
     </form>

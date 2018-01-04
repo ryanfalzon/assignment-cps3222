@@ -36,7 +36,7 @@
         <label>Login Key</label>
         <input type="text" name="loginkey"><br />
         <p>${errorlogin}</p>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" name="loginbutton">
     </form>
 </div>
 </body>
