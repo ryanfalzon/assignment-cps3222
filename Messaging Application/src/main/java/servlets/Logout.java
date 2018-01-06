@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 public class Logout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        MessagingSystem system = new MessagingSystem();
         HttpSession session = request.getSession(true);
 
         // Search for source agent
@@ -28,6 +29,7 @@ public class Logout extends HttpServlet {
         }
 
         // Logout and delete source agent
+        system.logout(sourceAgent);
         StaticVariables.agents.remove(sourceAgent);
         session.setAttribute("approval", "");
         session.setAttribute("id", "");

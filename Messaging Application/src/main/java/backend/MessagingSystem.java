@@ -81,42 +81,62 @@ public class MessagingSystem {
         // Check that the sourceAgent is the same as the one currently logged in
         if (sourceAgent.getSessionId().equals(StaticVariables.sessionId)) {
 
-            // Check that a SendMessage does not contain any blocked words
-            if (checkMessage(message)) {
+            // Check that a SendMessage is not longer than 140 characters
+            if (message.length() <= 140) {
 
-                // Check that a SendMessage is not longer than 140 characters
-                if (message.length() <= 140) {
+                // Try to send message
+                String messageToSend = checkMessage(message);
+                if (sourceAgent.sendMessage(targetAgent, new Message(sourceAgent, targetAgent, System.currentTimeMillis(), checkMessage(message)))) {
 
-                    // Try to send SendMessage
-                    if (sourceAgent.sendMessage(targetAgent, new Message(sourceAgent, targetAgent, System.currentTimeMillis(), message))) {
+                    // Check if message contains any blocked words
+                    if(messageToSend.equals(message)){
                         return "Message Sent";
-                    } else {
-                        return "Message Not Sent - Error While Sending";
                     }
-                } else {
-                    return "Message Not Sent - Message Exceeds 140 Characters";
+                    else{
+                        return "Message Sent - Removed Blocked Words From Message";
+                    }
                 }
-            } else {
-                return "Message Not Sent - Message Contains Blocked Words";
+                else {
+
+                    // Check if the system will log out the logged in agent
+                    if (sourceAgent.getSessionId() == null) {
+                        return "Message Not Sent - Message Limit Exceeded. You Will Be Logged-Out In 10 Seconds";
+                    }
+                    else {
+                        return "Message Not Sent - Target Agent Exceeded Message Limit";
+                    }
+                }
             }
-        } else {
+            else {
+                return "Message Not Sent - Message Exceeds 140 Characters";
+            }
+        }
+        else {
             return "Message Not Sent - Source Agent Does Not Match Logged-in User";
         }
     }
 
     // Check if passed string contains an element from the blocked words
-    private boolean checkMessage(String message) {
+    private String checkMessage(String message) {
 
         // Iterate for all the blocked words in the list
         for (int i = 0; i < blockedWords.size(); i++) {
 
             // If string contains current element
             if (message.contains(blockedWords.get(i))) {
-                return false;
+                message = message.replaceAll(blockedWords.get(i), "");
             }
         }
 
         // If SendMessage does not contain a blocked word
-        return true;
+        return message;
+    }
+
+    // A method to log out the passed user
+    public void logout(Agent agent){
+
+        // End the session with the agent
+        agent.setSessionId(null);
+        agent.setKey(null);
     }
 }

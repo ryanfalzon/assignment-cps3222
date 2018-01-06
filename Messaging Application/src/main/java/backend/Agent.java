@@ -95,6 +95,8 @@ public class Agent {
             // Check how many messages the receiver has sent and received
             if((destinationAgent.getSentCount() < 25) && (destinationAgent.getReceiveCount() < 25)){
                 StaticVariables.mailboxes.get(mailboxNumber).getMessages().add(message);
+                sentCount++;
+                destinationAgent.setReceiveCount(destinationAgent.getReceiveCount() + 1);
                 return true;
             }
             else{

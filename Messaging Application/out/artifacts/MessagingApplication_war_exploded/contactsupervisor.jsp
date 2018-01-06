@@ -32,7 +32,8 @@
             <input type="text" name="id"><br />
             <label>Name</label>
             <input type="text" name="name"><br /><br />
-            <input type="submit" value="Get Login Key" name="getKeyButton">
+            <input type="submit" value="Get Login Key" name="getKeyButton"><br /><br />
+            <input type="submit" value="Back To Main Menu" name="backButton">
         </form>
     </div>
 </body>

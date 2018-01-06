@@ -35,8 +35,9 @@
         <input type="text" name="id"><br />
         <label>Login Key</label>
         <input type="text" name="loginkey"><br />
-        <p>${errorlogin}</p>
-        <input type="submit" value="Login" name="loginbutton">
+        <p name="error">${errorlogin}</p>
+        <input type="submit" value="Login" name="loginbutton"><br /><br />
+        <input type="submit" value="Back To Main Menu" name="backButton">
     </form>
 </div>
 </body>

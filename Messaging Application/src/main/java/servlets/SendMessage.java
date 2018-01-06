@@ -47,8 +47,16 @@ public class SendMessage extends HttpServlet {
         session.setAttribute("error", system.sendMessage(sourceAgent, targetAgent, request.getParameter("message")));
         session.setAttribute("hasmessages", "");
         session.setAttribute("message", "");
-        RequestDispatcher rd  = request.getRequestDispatcher("/message.jsp");
-        rd.forward(request,response);
+
+        // Check if agent has exceeded message limit and needs to be logged out
+        if(session.getAttribute("error").toString().contains("10")){
+            RequestDispatcher rd  = request.getRequestDispatcher("/automaticlogout.jsp");
+            rd.forward(request,response);
+        }
+        else{
+            RequestDispatcher rd  = request.getRequestDispatcher("/message.jsp");
+            rd.forward(request,response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

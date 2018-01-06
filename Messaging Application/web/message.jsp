@@ -35,8 +35,9 @@
         <label>Target Agent ID</label>
         <input type="text" name="targetagent"><br /><br />
         <textarea rows="4" cols="50" name="message"></textarea><br />
-        <p class="error">${error}</p>
-        <input type="submit" value="Submit Message">
+        <p name="error" class="error">${error}</p>
+        <input type="submit" value="Ok" name="errorButton" hidden>
+        <input type="submit" value="Submit Message" name="submitmessage">
     </form>
     <form action="/mailbox" method="post">
         <input type="submit" value="Check If You Have Messages" name="count">
@@ -45,8 +46,8 @@
         <h4>Current Message</h4>
         <p>${message}</p>
     </form>
-    <form action="/login" method="post">
-        <input type="submit" value="Logout"><br /><br />
+    <form action="/logout" method="post">
+        <input type="submit" value="Logout" name="logoutButton"><br /><br />
     </form>
 </div>
 </body>

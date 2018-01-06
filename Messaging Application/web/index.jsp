@@ -28,10 +28,8 @@
 <body>
 <div class="container">
     <h2>Home Page</h2>
-    <form action="login.jsp" method="post">
-        <input type="submit" value="Login" name="loginButton"><br />
-    </form>
-    <form action="contactsupervisor.jsp" method="post">
+    <form action="/indexservlet" method="post">
+        <input type="submit" value="Login" name="loginButton"><br /><br />
         <input type="submit" value="Contact Supervisor" name="contactButton"><br />
     </form>
 </div>

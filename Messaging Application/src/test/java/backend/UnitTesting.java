@@ -108,16 +108,20 @@ public class UnitTesting {
         // Verify
         assertEquals("Message Sent", message);
     }
-/*
+
     @Test
     // Test an invalid SendMessage while not logged in
     public void testInvalidMessage1() {
 
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+
         // Exercise
-        String SendMessage = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, how are you?");
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, How Are You?");
 
         // Verify
-        assertEquals("Message Not Sent", SendMessage);
+        assertEquals("Message Not Sent - Source Agent Does Not Match Logged-in User", message);
     }
 
     @Test
@@ -125,16 +129,17 @@ public class UnitTesting {
     public void testInvalidMessage2() {
 
         // Specify the return of the method without even having an implementation and login the agent
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
 
         // Exercise
-        String SendMessage = system.sendMessage(agent, new Agent("002", "Kristi"), "Does it contain ginger?");
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, send recipe now.");
 
         // Verify
-        assertEquals("Message Not Sent", SendMessage);
+        assertEquals("Message Sent - Removed Blocked Words From Message", message);
     }
-
+/*
     @Test
     // Test an invalid SendMessage longer than 140 characters
     public void testInvalidMessage3() {
@@ -148,24 +153,26 @@ public class UnitTesting {
 
         // Verify
         assertEquals("Message Not Sent", SendMessage);
-    }
+    }*/
 
     @Test
     // Test an invalid SendMessage whose source exceeds 25 messages
     public void testInvalidMessage4() {
 
         // Specify the return of the method without even having an implementation and login the agent
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
-        agent.setSentCount(26);
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
 
         // Exercise
-        String SendMessage = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, how are you?");
+        system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, How Are You?");
+        agent.setSentCount(26);
+        String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, How Are You?");
 
         // Verify
-        assertEquals("Message Not Sent", SendMessage);
+        assertEquals("Message Not Sent - Message Limit Exceeded. You Will Be Logged-Out In 10 Seconds", message);
     }
-
+/*
     @Test
     // Test an invalid SendMessage whose receiver exceeds 25 messages
     public void testInvalidMessage5() {
