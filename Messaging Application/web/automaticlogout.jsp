@@ -29,7 +29,7 @@
     <h3 name="id">You have sent more than 25 messages and you will be logged out.</h3>
     <h3 name="name">Press ok to continue...</h3>
     <form action="/index.jsp" method="post">
-        <input type="submit" value="Ok" name="automaticlogout"><br /><br />
+        <input type="submit" value="Ok" name="logoutButton"><br /><br />
     </form>
 </div>
 </body>

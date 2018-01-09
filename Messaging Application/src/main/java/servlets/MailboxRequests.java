@@ -1,6 +1,6 @@
 package servlets;
 
-import backend.Mailbox;
+import UnitTesting.Mailbox;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

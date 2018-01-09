@@ -1,7 +1,7 @@
 package servlets;
 
-import backend.Agent;
-import backend.MessagingSystem;
+import UnitTesting.Agent;
+import UnitTesting.MessagingSystem;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

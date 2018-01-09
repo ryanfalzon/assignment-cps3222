@@ -1,7 +1,7 @@
 package servlets;
 
-import backend.Agent;
-import backend.JohnDoe;
+import UnitTesting.Agent;
+import UnitTesting.JohnDoe;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;

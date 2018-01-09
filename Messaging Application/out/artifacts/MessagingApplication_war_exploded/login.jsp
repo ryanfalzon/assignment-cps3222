@@ -32,9 +32,9 @@
     <h3>Please enter the following details to be logged in to the system.</h3>
     <form action="/login" method="post">
         <label>ID</label>
-        <input type="text" name="id"><br />
+        <input type="text" name="id" value="${id}"><br />
         <label>Login Key</label>
-        <input type="text" name="loginkey"><br />
+        <input type="text" name="loginkey" value="${loginkey}"><br />
         <p name="error">${errorlogin}</p>
         <input type="submit" value="Login" name="loginbutton"><br /><br />
         <input type="submit" value="Back To Main Menu" name="backButton">

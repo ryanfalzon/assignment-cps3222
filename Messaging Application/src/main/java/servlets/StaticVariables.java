@@ -1,8 +1,7 @@
 package servlets;
 
-import backend.Agent;
-import backend.LoginKey;
-import backend.Mailbox;
+import UnitTesting.Agent;
+import UnitTesting.Mailbox;
 
 import java.util.ArrayList;
 import java.util.List;

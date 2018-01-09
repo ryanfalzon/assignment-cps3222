@@ -29,7 +29,8 @@
     <h3 name="id">Agent ID: ${id}</h3>
     <h3 name="name">Agent Name: ${name}</h3>
     <h3 name="loginkey">Login Key: ${loginkey}</h3>
-    <form action="/index.jsp" method="post">
+    <form action="/loginkeypage" method="post">
+        <input type="submit" value="Continue To Login" name="loginButton"><br /><br />
         <input type="submit" value="Back To Main Menu" name="backButton"><br /><br />
     </form>
 </div>
