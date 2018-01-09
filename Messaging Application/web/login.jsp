@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Contact Supervisor</title>
+    <title>Login Page</title>
     <style type="text/css">
         .container {
             width: 500px;

@@ -20,7 +20,7 @@ public class MessagingSystem {
 
     // Default constructor
     public MessagingSystem() {
-        this.blockedWords = Arrays.asList("recipe", "ginger", "nuclear");
+        this.blockedWords = Arrays.asList("(?i)r(?i)e(?i)c(?i)i(?i)p(?i)e", "(?i)g(?i)i(?i)n(?i)g(?i)e(?i)r", "(?i)n(?i)u(?i)c(?i)l(?i)e(?i)a(?i)r");
     }
 
     // Logs in a user given an agent id and key
@@ -121,11 +121,7 @@ public class MessagingSystem {
 
         // Iterate for all the blocked words in the list
         for (int i = 0; i < blockedWords.size(); i++) {
-
-            // If string contains current element
-            if (message.contains(blockedWords.get(i))) {
-                message = message.replaceAll(blockedWords.get(i), "");
-            }
+            message = message.replaceAll(blockedWords.get(i), "");
         }
 
         // If SendMessage does not contain a blocked word
@@ -136,7 +132,7 @@ public class MessagingSystem {
     public void logout(Agent agent){
 
         // End the session with the agent
-        agent.setSessionId(null);
+        agent.setSessionId("");
         agent.setKey(null);
     }
 }

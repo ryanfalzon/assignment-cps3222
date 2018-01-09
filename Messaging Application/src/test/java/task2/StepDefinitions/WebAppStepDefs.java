@@ -134,4 +134,52 @@ public class WebAppStepDefs {
     public void i_should_be_logged_out(String pageTitle) throws Exception {
         assertEquals(pageTitle, browser.getTitle());
     }
+
+    @When("^I attempt to send the message (.*) to another agent$")
+    public void i_attempt_to_send_the_message_to_another_agent(String message) throws Exception {
+
+        // Login the agent
+        browser.get("localhost:8080/");
+        browser.findElement(By.name("contactButton")).click();
+        browser.findElement(By.name("id")).sendKeys("001");
+        browser.findElement(By.name("name")).sendKeys("Jane Doe");
+        browser.findElement(By.name("getKeyButton")).click();
+        String idFirst = browser.findElement(By.name("id")).getText().substring(10);
+        String loginKeyFirst = browser.findElement(By.name("loginkey")).getText().substring(11);
+        browser.findElement(By.name("backButton")).click();
+        browser.findElement(By.name("loginButton")).click();
+        browser.findElement(By.name("id")).sendKeys(idFirst);
+        browser.findElement(By.name("loginkey")).sendKeys(loginKeyFirst);
+        browser.findElement(By.name("loginbutton")).click();
+
+        // Send a message
+        browser.findElement(By.name("targetagent")).sendKeys("002");
+        browser.findElement(By.name("message")).sendKeys(message);
+        browser.findElement(By.name("submitmessage")).click();
+
+        // Logout agent
+        browser.findElement(By.name("logoutButton")).click();
+    }
+
+    @Then("^the other agent should receive the message (.*)$")
+    public void the_other_agent_should_receive_the_message(String message) throws Exception {
+
+        // Login to another agent
+        browser.get("localhost:8080/");
+        browser.findElement(By.name("contactButton")).click();
+        browser.findElement(By.name("id")).sendKeys("002");
+        browser.findElement(By.name("name")).sendKeys("Janette Doe");
+        browser.findElement(By.name("getKeyButton")).click();
+        String idSecond = browser.findElement(By.name("id")).getText().substring(10);
+        String loginKeySecond = browser.findElement(By.name("loginkey")).getText().substring(11);
+        browser.findElement(By.name("backButton")).click();
+        browser.findElement(By.name("loginButton")).click();
+        browser.findElement(By.name("id")).sendKeys(idSecond);
+        browser.findElement(By.name("loginkey")).sendKeys(loginKeySecond);
+        browser.findElement(By.name("loginbutton")).click();
+
+        // Get next message
+        browser.findElement(By.name("next")).click();
+        assertEquals(message, browser.findElement(By.name("newMessage")).getText());
+    }
 }

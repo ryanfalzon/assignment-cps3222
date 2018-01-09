@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.uispec4j:uispec4j:jdk16:2.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/uispec4j/uispec4j/2.4/uispec4j-2.4-jdk16.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/uispec4j/uispec4j/2.4/uispec4j-2.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/uispec4j/uispec4j/2.4/uispec4j-2.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

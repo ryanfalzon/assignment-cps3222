@@ -44,7 +44,7 @@
         <p>${hasmessages}</p>
         <input type="submit" value="Get Next Message" name="next">
         <h4>Current Message</h4>
-        <p>${message}</p>
+        <p name="newMessage">${message}</p>
     </form>
     <form action="/logout" method="post">
         <input type="submit" value="Logout" name="logoutButton"><br /><br />

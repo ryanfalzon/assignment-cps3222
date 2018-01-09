@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import servlets.StaticVariables;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.when;
@@ -24,6 +25,7 @@ public class UnitTesting {
 
     @Before
     public void Setup() {
+        StaticVariables.Erase();
         system = new MessagingSystem();
         agent = new Agent("001", "Ryan");
 
@@ -48,6 +50,19 @@ public class UnitTesting {
 
         // Verify
         assertEquals("Login Successful", message);
+    }
+
+    @Test
+    // Test unsuccessful login due to invalid agent ID
+    public void testInvalidID(){
+        // Specify the return of the method without even having an implementation
+        when(supervisor.getLoginKey(agent)).thenReturn(null);
+
+        // Exercise
+        boolean message = agent.contactSupervisor(supervisor);
+
+        // Verify
+        assertEquals(message, false);
     }
 
     @Test
@@ -116,6 +131,8 @@ public class UnitTesting {
         // Specify the return of the method without even having an implementation and login the agent
         when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
         agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
+        system.logout(agent);
 
         // Exercise
         String message = system.sendMessage(agent, new Agent("002", "Kristi"), "Hello, How Are You?");
@@ -139,21 +156,22 @@ public class UnitTesting {
         // Verify
         assertEquals("Message Sent - Removed Blocked Words From Message", message);
     }
-/*
+
     @Test
     // Test an invalid SendMessage longer than 140 characters
     public void testInvalidMessage3() {
 
         // Specify the return of the method without even having an implementation and login the agent
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
 
         // Exercise
         String SendMessage = system.sendMessage(agent, new Agent("002", "Kristi"), "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij");
 
         // Verify
-        assertEquals("Message Not Sent", SendMessage);
-    }*/
+        assertEquals("Message Not Sent - Message Exceeds 140 Characters", SendMessage);
+    }
 
     @Test
     // Test an invalid SendMessage whose source exceeds 25 messages
@@ -172,36 +190,39 @@ public class UnitTesting {
         // Verify
         assertEquals("Message Not Sent - Message Limit Exceeded. You Will Be Logged-Out In 10 Seconds", message);
     }
-/*
+
     @Test
     // Test an invalid SendMessage whose receiver exceeds 25 messages
     public void testInvalidMessage5() {
 
         // Specify the return of the method without even having an implementation and login the agent
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
-        Agent targetAgent = new Agent("002", "Kristi");
-        targetAgent.setReceiveCount(26);
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
 
         // Exercise
-        String SendMessage = system.sendMessage(agent, targetAgent, "Hello, how are you?");
+        Agent targetAgent = new Agent("002", "Kristi");
+        system.sendMessage(agent, targetAgent, "Hello, How Are You?");
+        targetAgent.setReceiveCount(26);
+        String message = system.sendMessage(agent, targetAgent, "Hello, How Are You?");
 
         // Verify
-        assertEquals("Message Not Sent", SendMessage);
+        assertEquals("Message Not Sent - Target Agent Exceeded Message Limit", message);
     }
 
     @Test
     // Test whether mailbox contains messages true
     public void testMessagesMailbox() {
 
-        // Specify the return of the method without even having an implementation and login the agent and send SendMessage
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
         Agent targetAgent = new Agent("002", "Kristi");
         system.sendMessage(agent, targetAgent, "Hello, How Are You?");
 
         // Exercise
-        boolean SendMessage = targetAgent.getMailbox().hasMessages();
+        boolean SendMessage = StaticVariables.mailboxes.get(targetAgent.getMailbox(targetAgent.getId())).hasMessages();
 
         // Verify
         assertEquals(true, SendMessage);
@@ -211,13 +232,14 @@ public class UnitTesting {
     // Test whether mailbox contains messages false
     public void testNoMessagesMailbox() {
 
-        // Specify the return of the method without even having an implementation and login the agent and send SendMessage
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
         Agent targetAgent = new Agent("002", "Kristi");
 
         // Exercise
-        boolean SendMessage = targetAgent.getMailbox().hasMessages();
+        boolean SendMessage = StaticVariables.mailboxes.get(targetAgent.getMailbox(targetAgent.getId())).hasMessages();
 
         // Verify
         assertEquals(false, SendMessage);
@@ -227,14 +249,14 @@ public class UnitTesting {
     // Test getting the next SendMessage in the mailbox
     public void testNextMessage() {
 
-        // Specify the return of the method without even having an implementation and login the agent and send SendMessage
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
         Agent targetAgent = new Agent("002", "Kristi");
         system.sendMessage(agent, targetAgent, "Hello, How Are You?");
 
-        // Exercise
-        String SendMessage = targetAgent.getMailbox().consumeNextMessage();
+        String SendMessage = StaticVariables.mailboxes.get(targetAgent.getMailbox(targetAgent.getId())).consumeNextMessage();
 
         // Verify
         assertEquals("Hello, How Are You?", SendMessage);
@@ -244,15 +266,15 @@ public class UnitTesting {
     // Test getting the next SendMessage in the mailbox when empty
     public void testNextMessageEmpty() {
 
-        // Specify the return of the method without even having an implementation and login the agent and send SendMessage
-        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis(), agent.getId()));
-        system.login(agent);
+        // Specify the return of the method without even having an implementation and login the agent
+        when(supervisor.getLoginKey(agent)).thenReturn(new LoginKey(VALID_KEY, System.currentTimeMillis()));
+        agent.contactSupervisor(supervisor);
+        system.login(agent, VALID_KEY);
         Agent targetAgent = new Agent("002", "Kristi");
 
-        // Exercise
-        String SendMessage = targetAgent.getMailbox().consumeNextMessage();
+        String SendMessage = StaticVariables.mailboxes.get(targetAgent.getMailbox(targetAgent.getId())).consumeNextMessage();
 
         // Verify
-        assertEquals("MailboxRequests Empty", SendMessage);
+        assertEquals("Mailbox Empty", SendMessage);
     }
-*/}
+}

@@ -43,7 +43,14 @@ public class Mailbox {
         // Return SendMessage if not empty
         if (counter < messages.size()) {
             counter++;
-            return messages.get(counter--).getMessage();
+
+            // Check timestamp of current messgage
+            if ((System.currentTimeMillis() - messages.get(counter - 1).getTimestamp()) <= 1800000){
+                return messages.get(counter - 1).getMessage();
+            }
+            else{
+                return consumeNextMessage();
+            }
         }
         // Return null if empty
         else {
@@ -55,12 +62,27 @@ public class Mailbox {
     public boolean hasMessages() {
 
         // Return true if there is at least one SendMessage
-        if (messages.size() > 0) {
+        if ((messages.size() > 0) && checkTimestamp()) {
             return true;
         }
         // Return false if empty
         else {
             return false;
         }
+    }
+
+    // Check timestamp of all messages in mailbox
+    public boolean checkTimestamp(){
+
+        // Iterate through all the messages
+        for(int i = 0; i < messages.size(); i++){
+
+            // Check current message timestamp
+            if ((System.currentTimeMillis() - messages.get(i).getTimestamp()) > 1800000){
+                return false;
+            }
+        }
+
+        return true;
     }
 }

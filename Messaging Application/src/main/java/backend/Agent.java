@@ -50,14 +50,6 @@ public class Agent {
         this.key = key;
     }
 
-    // Default constructor
-    public Agent(){
-        receiveCount = 0;
-        sentCount = 0;
-        this.sessionId = "";
-        this.key = null;
-    }
-
     // Constructor
     public Agent(String id, String name){
         this.id = id;
@@ -111,7 +103,7 @@ public class Agent {
     }
 
     // Get target agent's mailbox
-    private int getMailbox(String agentID){
+    public int getMailbox(String agentID){
 
         // Loop through all mailboxes
         for(int i = 0; i < StaticVariables.mailboxes.size(); i++){
