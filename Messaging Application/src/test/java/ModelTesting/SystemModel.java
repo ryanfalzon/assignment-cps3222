@@ -1,6 +1,5 @@
 package ModelTesting;
 
-import UnitTesting.Agent;
 import nz.ac.waikato.modeljunit.*;
 import nz.ac.waikato.modeljunit.coverage.ActionCoverage;
 import nz.ac.waikato.modeljunit.coverage.StateCoverage;
@@ -90,7 +89,7 @@ public class SystemModel implements FsmModel {
     public @Action void validKeyDetails(){
 
         // Generate a random number to see which agent will login
-        int randomNumber = randomGenerator.nextInt(1);
+        int randomNumber = randomGenerator.nextInt(1) + 1;
 
         // Perform the action
         if(randomNumber == 0){
