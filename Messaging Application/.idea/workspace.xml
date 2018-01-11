@@ -23,7 +23,7 @@
     <SUITE FILE_PATH="coverage/Messaging_Application$LoginKeyTests.coverage" NAME="LoginKeyTests Coverage Results" MODIFIED="1515536404088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>UnitTesting.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Messaging_Application$UnitTesting_in_MessagingApplication.coverage" NAME="UnitTesting in MessagingApplication Coverage Results" MODIFIED="1515597023984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Messaging_Application$UnitTesting_in_MessagingApplication.coverage" NAME="UnitTesting in MessagingApplication Coverage Results" MODIFIED="1515659122106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>UnitTesting.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Messaging_Application$Feature__webapp.coverage" NAME="Feature: webapp Coverage Results" MODIFIED="1515253987486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -95,8 +95,8 @@
             <file leaf-file-name="Agent.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/Agent.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="594">
-                    <caret line="90" column="89" lean-forward="true" selection-start-line="90" selection-start-column="89" selection-end-line="90" selection-end-column="89" />
+                  <state relative-caret-position="1122">
+                    <caret line="90" column="89" lean-forward="false" selection-start-line="90" selection-start-column="89" selection-end-line="90" selection-end-column="89" />
                     <folding />
                   </state>
                 </provider>
@@ -122,21 +122,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Mailbox.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/Mailbox.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="883">
-                    <caret line="87" column="1" lean-forward="false" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="MessagingSystem.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/MessagingSystem.java">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="50">
-                    <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+                    <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
                     <folding />
                   </state>
                 </provider>
@@ -165,7 +155,7 @@
       <file leaf-file-name="SystemModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
+            <state relative-caret-position="480">
               <caret line="333" column="28" lean-forward="false" selection-start-line="333" selection-start-column="28" selection-end-line="333" selection-end-column="28" />
               <folding>
                 <element signature="e#1069#1070#0" expanded="true" />
@@ -195,21 +185,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/SendMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="52" column="82" lean-forward="false" selection-start-line="52" selection-start-column="82" selection-end-line="52" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WebAppStepDefs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/StepDefinitions/WebAppStepDefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1682">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="221">
+              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -219,7 +199,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/Features/webapp.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -319,8 +299,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
+    <option name="x" value="1970" />
+    <option name="y" value="57" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -377,6 +357,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -487,10 +471,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -526,7 +506,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SystemModel.MessagingSystemModelRunner">
+  <component name="RunManager" selected="JUnit.SystemModel">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -814,9 +794,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SystemModel.MessagingSystemModelRunner" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SystemModel" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UnitTesting in MessagingApplication" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SystemModel" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UnitTesting in MessagingApplication" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SystemModel.MessagingSystemModelRunner" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.AgentTests" />
         <item index="4" class="java.lang.String" itemvalue="Cucumber java.Feature: webapp" />
       </list>
@@ -855,13 +835,11 @@
       <workItem from="1515491736513" duration="8422000" />
       <workItem from="1515519000853" duration="9568000" />
       <workItem from="1515570273382" duration="26060000" />
+      <workItem from="1515658912735" duration="572000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SystemModel_MessagingSystemModelRunner - 2018.01.10 at 20h 22m 58s.xml">
-      <configuration name="SystemModel.MessagingSystemModelRunner" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SystemModel_MessagingSystemModelRunner - 2018.01.10 at 20h 23m 59s.xml">
       <configuration name="SystemModel.MessagingSystemModelRunner" configurationId="JUnit" />
     </history-entry>
@@ -889,9 +867,12 @@
     <history-entry file="SystemModel_MessagingSystemModelRunner - 2018.01.10 at 23h 05m 57s.xml">
       <configuration name="SystemModel.MessagingSystemModelRunner" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UnitTesting_in_MessagingApplication - 2018.01.11 at 09h 25m 23s.xml">
+      <configuration name="UnitTesting in MessagingApplication" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156916000" />
+    <option name="totallyTimeSpent" value="157488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -928,7 +909,7 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25053304" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21748401" sideWeight="0.4522727" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.4522727" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19832827" sideWeight="0.5477273" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.193769" sideWeight="0.51644737" order="2" side_tool="true" content_ui="tabs" />
@@ -1037,13 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/StaticVariables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1290,7 +1264,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/Mailbox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
+        <state relative-caret-position="1258">
           <caret line="87" column="1" lean-forward="false" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
           <folding />
         </state>
@@ -1314,8 +1288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="90" column="89" lean-forward="true" selection-start-line="90" selection-start-column="89" selection-end-line="90" selection-end-column="89" />
+        <state relative-caret-position="1122">
+          <caret line="90" column="89" lean-forward="false" selection-start-line="90" selection-start-column="89" selection-end-line="90" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -1339,22 +1313,22 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/Features/webapp.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/StepDefinitions/WebAppStepDefs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1682">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="221">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/SendMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
+        <state relative-caret-position="697">
           <caret line="52" column="82" lean-forward="false" selection-start-line="52" selection-start-column="82" selection-end-line="52" selection-end-column="82" />
           <folding />
         </state>
@@ -1363,14 +1337,24 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/MessagingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/StaticVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
+        <state relative-caret-position="480">
           <caret line="333" column="28" lean-forward="false" selection-start-line="333" selection-start-column="28" selection-end-line="333" selection-end-column="28" />
           <folding>
             <element signature="e#1069#1070#0" expanded="true" />
