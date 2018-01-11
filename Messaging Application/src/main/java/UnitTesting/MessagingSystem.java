@@ -133,5 +133,7 @@ public class MessagingSystem {
         // End the session with the agent
         agent.setSessionId("");
         agent.setKey(null);
+        agent.setSentCount(0);
+        agent.setReceiveCount(0);
     }
 }

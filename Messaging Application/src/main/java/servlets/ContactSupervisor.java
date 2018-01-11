@@ -22,18 +22,16 @@ public class ContactSupervisor extends javax.servlet.http.HttpServlet {
             // Output some details
             if (current.getKey() != null) {
                 StaticVariables.agents.add(current);
-                session.setAttribute("approval", "Request Approved");
                 session.setAttribute("id", current.getId());
                 session.setAttribute("name", current.getName());
                 session.setAttribute("loginkey", current.getKey().getKey());
+                RequestDispatcher rd = request.getRequestDispatcher("/loginkey.jsp");
+                rd.forward(request, response);
             } else {
-                session.setAttribute("approval", "Request Not Approved");
-                session.setAttribute("id", request.getParameter("id"));
-                session.setAttribute("name", request.getParameter("name"));
-                session.setAttribute("loginkey", "N/A");
+                RequestDispatcher rd = request.getRequestDispatcher("/loginkeyerror.jsp");
+                rd.forward(request, response);
             }
-            RequestDispatcher rd = request.getRequestDispatcher("/loginkey.jsp");
-            rd.forward(request, response);
+
         }
         else if (request.getParameter("backButton") != null) {
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");

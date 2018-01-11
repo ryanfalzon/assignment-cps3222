@@ -1,5 +1,6 @@
 package ModelTesting;
 
+import UnitTesting.Agent;
 import nz.ac.waikato.modeljunit.*;
 import nz.ac.waikato.modeljunit.coverage.ActionCoverage;
 import nz.ac.waikato.modeljunit.coverage.StateCoverage;
@@ -8,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import servlets.StaticVariables;
 
 import java.util.Random;
 
@@ -18,7 +20,8 @@ public class SystemModel implements FsmModel {
     // Properties
     private WebDriver browser;
     private States modelState;
-    private boolean homePage, contactSupervisorPage, loginKeyMessagePage, loginPage, messagingPage, automaticLogoutPage;
+    private boolean homePage, contactSupervisorPage, loginKeyMessagePage, loginKeyErrorPage, loginPage, messagingPage, automaticLogoutPage;
+    private int i = 0;  // Used for AutomaticLogout Action
 
     // Constructor
     public SystemModel(){
@@ -38,6 +41,7 @@ public class SystemModel implements FsmModel {
         homePage = true;
         contactSupervisorPage = false;
         loginKeyMessagePage = false;
+        loginKeyErrorPage = false;
         loginPage = false;
         messagingPage = false;
         automaticLogoutPage = false;
@@ -47,34 +51,41 @@ public class SystemModel implements FsmModel {
 
         // Check boolean value passed
         if(b){
+            StaticVariables.Erase();
             browser.get("localhost:8080");
         }
     }
 
     // ContactingSupervisor Guard
     public boolean contactSupervisorGuard(){
-        return getState().equals(States.Home_Page);
+        return (getState().equals(States.Home_Page) || getState().equals(States.Login_Key_Error_Page));
     }
 
     // ContactingSupervisor Action
     public @Action void contactSupervisor(){
 
         // Perform the action
-        browser.findElement(By.name("contactButton")).click();
+        if(getState().equals(States.Home_Page)){
+            browser.findElement(By.name("contactButton")).click();
+            homePage = false;
+        }
+        else if(getState().equals(States.Login_Key_Error_Page)){
+            browser.findElement(By.name("backButton")).click();
+            loginKeyErrorPage = false;
+        }
         contactSupervisorPage = true;
-        homePage = false;
         modelState = States.Contact_Supervisor_Page;
 
         // Assert
         assertEquals("The model's Contact_Supervisor_Page state does not match the SUT's state.", contactSupervisorPage, browser.getTitle().equals("Contact Supervisor"));
     }
 
-    // ValidDetails Guard
+    // ValidKeyDetails Guard
     public boolean validKeyDetailsGuard(){
         return getState().equals(States.Contact_Supervisor_Page);
     }
 
-    // ValidDetails Action
+    // ValidKeyDetails Action
     public @Action void validKeyDetails(){
 
         // Perform the action
@@ -90,10 +101,30 @@ public class SystemModel implements FsmModel {
         assertEquals("The model's Login_Key_Message_Page state does not match the SUT's state.", loginKeyMessagePage, browser.getTitle().equals("Login Key Request"));
     }
 
+    // InvalidKeyDetails Guard
+    public boolean invalidKeyDetailsGuard(){
+        return getState().equals(States.Contact_Supervisor_Page);
+    }
+
+    // InvalidKeyDetails Action
+    public @Action void invalidKeyDetails(){
+
+        // Perform the action
+        browser.findElement(By.name("id")).sendKeys("spy");
+        browser.findElement(By.name("name")).sendKeys("Ryan Falzon");
+        browser.findElement(By.name("getKeyButton")).click();
+
+        loginKeyErrorPage = true;
+        contactSupervisorPage = false;
+        modelState = States.Login_Key_Error_Page;
+
+        // Assert
+        assertEquals("The model's Login_Key_Error_Page state does not match the SUT's state.", loginKeyErrorPage, browser.getTitle().equals("Request Not Approved"));
+    }
+
     // RedirectionHomePage Guard
     public boolean redirectionHomePageGuard(){
-        return (getState().equals(States.Login_Key_Message_Page) || (getState().equals(States.Contact_Supervisor_Page))
-                || (getState().equals(States.Login_Page)));
+        return (getState().equals(States.Contact_Supervisor_Page) || (getState().equals(States.Login_Page)));
     }
 
     // RedirectionHomePage Action
@@ -101,10 +132,7 @@ public class SystemModel implements FsmModel {
 
         // Perform the action
         browser.findElement(By.name("backButton")).click();
-        if(modelState.equals(States.Login_Key_Message_Page)){
-            loginKeyMessagePage = false;
-        }
-        else if(modelState.equals(States.Contact_Supervisor_Page)){
+        if(modelState.equals(States.Contact_Supervisor_Page)){
             contactSupervisorPage = false;
         }
         else if(modelState.equals(States.Login_Page)){
@@ -176,6 +204,23 @@ public class SystemModel implements FsmModel {
         assertEquals("The model's Messaging_Page state does not match the SUT's state.", messagingPage, browser.getTitle().equals("Messaging Page"));
     }
 
+    // InvalidAgentDetails Guard
+    public boolean invalidAgentDetailsGuard(){
+        return getState().equals(States.Login_Page);
+    }
+
+    // InvalidAgentDetails Action
+    public @Action void invalidAgentDetails(){
+
+        // Perform action
+        browser.findElement(By.name("loginkey")).sendKeys("invalidloginkey");
+        browser.findElement(By.name("loginbutton")).click();
+
+        // Assert
+        assertEquals("The model's Login_Page state does not match the SUT's state.", loginPage, browser.getTitle().equals("Login Page"));
+        assertEquals("Error message not displayed", true, (!browser.findElement(By.name("error")).getText().equals("")));
+    }
+
     // ValidMessage Guard
     public boolean validMessageGuard(){
         return getState().equals(States.Messaging_Page);
@@ -189,10 +234,91 @@ public class SystemModel implements FsmModel {
         browser.findElement(By.name("message")).sendKeys("Hello how are you?");
         browser.findElement(By.name("submitmessage")).click();
 
+        if(browser.getTitle().equals("Automatic Logout")){
+            browser.findElement(By.name("logoutButton")).click();
+            browser.findElement(By.name("contactButton")).click();
+            browser.findElement(By.name("loginButton")).click();
+            browser.findElement(By.name("loginbutton")).click();
+        }
+
         // Assert
         assertEquals("The model's Messaging_Page state does not match the SUT's state.", messagingPage, browser.getTitle().equals("Messaging Page"));
-        assertEquals("Message was not sent successful.", "Message Sent", browser.findElement(By.name("error")).getText());
+    }
 
+    // InvalidMessage Guard
+    public boolean invalidMessageGuard(){
+        return getState().equals(States.Messaging_Page);
+    }
+
+    // InvalidMessage Action
+    public @Action void invalidMessage(){
+
+        // Perform the action
+        browser.findElement(By.name("targetagent")).sendKeys("002");
+        browser.findElement(By.name("message")).sendKeys("abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij");
+        browser.findElement(By.name("submitmessage")).click();
+
+        // Assert
+        assertEquals("The model's Messaging_Page state does not match the SUT's state.", messagingPage, browser.getTitle().equals("Messaging Page"));
+        assertEquals("Message was sent successfully.", false, browser.findElement(By.name("error")).getText().equals("Message Sent"));
+    }
+
+    // NextMessage Guard
+    public boolean nextMessageGuard(){
+        return getState().equals(States.Messaging_Page);
+    }
+
+    // NextMessage Action
+    public @Action void nextMessage(){
+
+        // Perform the action
+        browser.findElement(By.name("next")).click();
+
+        // Assert
+        assertEquals("The model's Messaging_Page state does not match the SUT's state.", messagingPage, browser.getTitle().equals("Messaging Page"));
+        assertEquals("Next message was not consumed.", true, (!browser.findElement(By.name("newMessage")).getText().equals("")));
+    }
+
+    // HasMessage Guard
+    public boolean hasMessageGuard(){
+        return getState().equals(States.Messaging_Page);
+    }
+
+    // HasMessage Action
+    public @Action void hasMessage(){
+
+        // Perform the action
+        browser.findElement(By.name("count")).click();
+
+        // Assert
+        assertEquals("The model's Messaging_Page state does not match the SUT's state.", messagingPage, browser.getTitle().equals("Messaging Page"));
+        assertEquals("Next message was not consumed.", true, (!browser.findElement(By.name("checkCount")).getText().equals("")));
+    }
+
+    // AutomaticLogout Guard
+    public boolean automaticLogoutGuard(){
+        return getState().equals(States.Messaging_Page);
+    }
+
+    // AutomaticLogout Action
+    public @Action void automaticLogout(){
+
+        // Perform the action
+        StaticVariables.agents.clear();
+        while(browser.getTitle().equals("Messaging Page")){
+
+            // Send the message
+            browser.findElement(By.name("targetagent")).sendKeys(Integer.toString(i));
+            browser.findElement(By.name("message")).sendKeys("Testing 1... 2... 3...");
+            browser.findElement(By.name("submitmessage")).click();
+            i++;
+        }
+        messagingPage = false;
+        automaticLogoutPage = true;
+        modelState = States.Automatic_Logout_Page;
+
+        // Assert
+        assertEquals("The model's Automatic_Logout_Page state does not match the SUT's state.", automaticLogoutPage, browser.getTitle().equals("Automatic Logout"));
     }
 
     @Test
@@ -205,7 +331,7 @@ public class SystemModel implements FsmModel {
         tester.addCoverageMetric(new TransitionPairCoverage());
         tester.addCoverageMetric(new StateCoverage());
         tester.addCoverageMetric(new ActionCoverage());
-        tester.generate(250);
+        tester.generate(3000);
         tester.printCoverage();
     }
 }

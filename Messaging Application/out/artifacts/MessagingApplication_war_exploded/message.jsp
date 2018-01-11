@@ -41,7 +41,7 @@
     </form>
     <form action="/mailbox" method="post">
         <input type="submit" value="Check If You Have Messages" name="count">
-        <p>${hasmessages}</p>
+        <p name="checkCount">${hasmessages}</p>
         <input type="submit" value="Get Next Message" name="next">
         <h4>Current Message</h4>
         <p name="newMessage">${message}</p>

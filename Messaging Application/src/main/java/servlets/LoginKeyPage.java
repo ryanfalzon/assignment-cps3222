@@ -14,17 +14,9 @@ public class LoginKeyPage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(true);
-
-        // Check which button has been pressed
-        if(request.getParameter("loginButton") != null){
-            session.setAttribute("errorlogin", "");
-            RequestDispatcher rd  = request.getRequestDispatcher("/login.jsp");
-            rd.forward(request,response);
-        }
-        else if(request.getParameter("backButton") != null){
-            RequestDispatcher rd  = request.getRequestDispatcher("/index.jsp");
-            rd.forward(request,response);
-        }
+        session.setAttribute("errorlogin", "");
+        RequestDispatcher rd  = request.getRequestDispatcher("/login.jsp");
+        rd.forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
