@@ -89,7 +89,7 @@ public class SystemModel implements FsmModel {
     public @Action void validKeyDetails(){
 
         // Generate a random number to see which agent will login
-        int randomNumber = randomGenerator.nextInt(1) + 1;
+        int randomNumber = randomGenerator.nextInt(2);
 
         // Perform the action
         if(randomNumber == 0){
@@ -97,7 +97,6 @@ public class SystemModel implements FsmModel {
             browser.findElement(By.name("name")).sendKeys("Ryan Falzon");
         }
         else if(randomNumber == 1){
-            System.out.println("HVBDLKFHYSBSKDJYVBDKSJLVBDSLVLSDUHVBLDSJYVBSDLJHOBDKLV");
             browser.findElement(By.name("id")).sendKeys("002");
             browser.findElement(By.name("name")).sendKeys("Kristi Muscat");
         }
@@ -341,7 +340,7 @@ public class SystemModel implements FsmModel {
         tester.addCoverageMetric(new TransitionPairCoverage());
         tester.addCoverageMetric(new StateCoverage());
         tester.addCoverageMetric(new ActionCoverage());
-        tester.generate(250);
+        tester.generate(8000);
         tester.printCoverage();
     }
 }
