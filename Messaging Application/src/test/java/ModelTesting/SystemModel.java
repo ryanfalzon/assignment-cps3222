@@ -22,6 +22,7 @@ public class SystemModel implements FsmModel {
     private States modelState;
     private boolean homePage, contactSupervisorPage, loginKeyMessagePage, loginKeyErrorPage, loginPage, messagingPage, automaticLogoutPage;
     private int i = 0;  // Used for AutomaticLogout Action
+    Random randomGenerator = new Random();      // Random number generator to choose which agent will login
 
     // Constructor
     public SystemModel(){
@@ -88,9 +89,19 @@ public class SystemModel implements FsmModel {
     // ValidKeyDetails Action
     public @Action void validKeyDetails(){
 
+        // Generate a random number to see which agent will login
+        int randomNumber = randomGenerator.nextInt(1);
+
         // Perform the action
-        browser.findElement(By.name("id")).sendKeys("001");
-        browser.findElement(By.name("name")).sendKeys("Ryan Falzon");
+        if(randomNumber == 0){
+            browser.findElement(By.name("id")).sendKeys("001");
+            browser.findElement(By.name("name")).sendKeys("Ryan Falzon");
+        }
+        else if(randomNumber == 1){
+            System.out.println("HVBDLKFHYSBSKDJYVBDKSJLVBDSLVLSDUHVBLDSJYVBSDLJHOBDKLV");
+            browser.findElement(By.name("id")).sendKeys("002");
+            browser.findElement(By.name("name")).sendKeys("Kristi Muscat");
+        }
         browser.findElement(By.name("getKeyButton")).click();
 
         loginKeyMessagePage = true;
@@ -331,7 +342,7 @@ public class SystemModel implements FsmModel {
         tester.addCoverageMetric(new TransitionPairCoverage());
         tester.addCoverageMetric(new StateCoverage());
         tester.addCoverageMetric(new ActionCoverage());
-        tester.generate(3000);
+        tester.generate(250);
         tester.printCoverage();
     }
 }
