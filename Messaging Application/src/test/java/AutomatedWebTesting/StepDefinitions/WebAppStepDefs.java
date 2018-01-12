@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import servlets.StaticVariables;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -26,6 +27,7 @@ public class WebAppStepDefs {
     @After
     public void teardown() {
         browser.quit();
+        StaticVariables.Erase();
     }
 
     @Given("^I am an agent trying to log in$")
