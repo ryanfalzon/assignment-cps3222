@@ -351,7 +351,7 @@ public class SystemModel implements FsmModel {
         tester.addCoverageMetric(new TransitionPairCoverage());
         tester.addCoverageMetric(new StateCoverage());
         tester.addCoverageMetric(new ActionCoverage());
-        tester.generate(250);
+        tester.generate(10000);
         tester.printCoverage();
     }
 }
