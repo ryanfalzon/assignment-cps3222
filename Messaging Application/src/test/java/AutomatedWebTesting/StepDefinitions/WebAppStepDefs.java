@@ -1,5 +1,8 @@
 package AutomatedWebTesting.StepDefinitions;
 
+import AutomatedWebTesting.PageObjects.ContactSupervisorForm;
+import AutomatedWebTesting.PageObjects.LoginForm;
+import AutomatedWebTesting.PageObjects.MessagingForm;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -8,6 +11,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import servlets.ContactSupervisor;
 import servlets.StaticVariables;
 
 import static org.junit.Assert.assertEquals;
@@ -17,6 +21,9 @@ public class WebAppStepDefs {
 
     // Properties
     WebDriver browser;
+    ContactSupervisorForm csForm;
+    LoginForm lForm;
+    MessagingForm mForm;
 
     @Before
     public void setup() {
@@ -37,26 +44,27 @@ public class WebAppStepDefs {
 
     @When("^I obtain a key from the supervisor using a valid id \"([^\"]*)\" \"([^\"]*)\"$")
     public void i_obtain_a_key_from_the_supervisor_using_a_valid_id(String agentID, String agentName) throws Exception {
-        browser.findElement(By.name("contactButton")).click();
-        browser.findElement(By.name("id")).sendKeys(agentID);
-        browser.findElement(By.name("name")).sendKeys(agentName);
-        browser.findElement(By.name("getKeyButton")).click();
+        csForm = new ContactSupervisorForm(browser);
+        csForm.goTo();
+        csForm.populate(agentID, agentName);
+        csForm.submit();
     }
 
     @Then("^the supervisor should give me a valid key$")
     public void the_supervisor_should_give_me_a_valid_key() throws Exception {
-        assertEquals("Request Approved", browser.findElement(By.name("approval")).getText());
+        assertEquals("Login Key Request", csForm.getPageTitle());
     }
 
     @When("^I log in using that key$")
     public void i_log_in_using_that_key() throws Exception {
-        browser.findElement(By.name("loginButton")).click();
-        browser.findElement(By.name("loginbutton")).click();
+        lForm = new LoginForm(browser);
+        lForm.goTo();
+        lForm.submit();
     }
 
     @Then("^I should be allowed to log in \"([^\"]*)\"$")
     public void i_should_be_allowed_to_log_in(String expectedTitle) throws Exception {
-        assertEquals(expectedTitle, browser.getTitle());
+        assertEquals(expectedTitle, lForm.getPageTitle());
     }
 
     @When("^I wait for (\\d+) seconds$")
@@ -66,7 +74,7 @@ public class WebAppStepDefs {
 
     @Then("^I should not be allowed to log in \"([^\"]*)\"$")
     public void i_should_not_be_allowed_to_log_in(String error) throws Exception {
-        assertEquals(error, browser.findElement(By.name("error")).getText());
+        assertEquals(error, csForm.find("error").getText());
     }
 
     @Given("^I am a logged in agent$")
@@ -74,54 +82,51 @@ public class WebAppStepDefs {
 
         // Login the agent
         browser.get("localhost:8080/");
-        browser.findElement(By.name("contactButton")).click();
-        browser.findElement(By.name("id")).sendKeys("001");
-        browser.findElement(By.name("name")).sendKeys("Jane Doe");
-        browser.findElement(By.name("getKeyButton")).click();
-        browser.findElement(By.name("loginButton")).click();
-        browser.findElement(By.name("loginbutton")).click();
+        csForm = new ContactSupervisorForm(browser);
+        lForm = new LoginForm(browser);
+        csForm.getKey("001", "Jane Doe");
+        lForm.login();
     }
 
     @When("^I attempt to send (\\d+) messages$")
     public void i_attempt_to_send_messages(int amount) throws Exception {
+
+        mForm = new MessagingForm(browser);
         for(int i = 0; i < amount; i++){
-            browser.findElement(By.name("targetagent")).sendKeys(Integer.toString(i));
-            browser.findElement(By.name("message")).sendKeys("Hello, how are you?");
-            browser.findElement(By.name("submitmessage")).click();
+            mForm.sendMessage(Integer.toString(i), "Testing 1... 2... 3...");
         }
     }
 
     @Then("^the messages should be successfully sent$")
     public void the_messages_should_be_successfully_sent() throws Exception {
-        assertEquals("Message Sent", browser.findElement(By.name("error")).getText());
+        assertEquals("Message Sent", mForm.find("error").getText());
     }
 
     @When("^I try to send another message$")
     public void i_try_to_send_another_message() throws Exception {
-        browser.findElement(By.name("targetagent")).sendKeys("26");
-        browser.findElement(By.name("message")).sendKeys("Hello, how are you?");
-        browser.findElement(By.name("submitmessage")).click();
+        mForm.sendMessage("26", "This should be an error!");
     }
 
     @Then("^the system will inform me that I have exceeded my quota \"([^\"]*)\"$")
-    public void the_system_will_inform_me_that_I_have_exceeded_my_quota(String arg1) throws Exception {
-        assertEquals(arg1, browser.getTitle());
+    public void the_system_will_inform_me_that_I_have_exceeded_my_quota(String title) throws Exception {
+        assertEquals(title, mForm.getPageTitle());
     }
 
     @Then("^I will be logged out \"([^\"]*)\"$")
     public void i_will_be_logged_out(String title) throws Exception {
-        browser.findElement(By.name("logoutButton")).click();
-        assertEquals(title, browser.getTitle());
+        mForm.find("logoutButton").click();
+        assertEquals(title, mForm.getPageTitle());
     }
 
     @When("^I click on log out$")
     public void i_click_on_log_out() throws Exception {
-        browser.findElement(By.name("logoutButton")).click();
+        mForm = new MessagingForm(browser);
+        mForm.find("logoutButton").click();
     }
 
     @Then("^I should be logged out \"([^\"]*)\"$")
     public void i_should_be_logged_out(String pageTitle) throws Exception {
-        assertEquals(pageTitle, browser.getTitle());
+        assertEquals(pageTitle, mForm.getPageTitle());
     }
 
     @When("^I attempt to send the message (.*) to another agent$")
@@ -129,36 +134,31 @@ public class WebAppStepDefs {
 
         // Login the agent
         browser.get("localhost:8080/");
-        browser.findElement(By.name("contactButton")).click();
-        browser.findElement(By.name("id")).sendKeys("001");
-        browser.findElement(By.name("name")).sendKeys("Jane Doe");
-        browser.findElement(By.name("getKeyButton")).click();
-        browser.findElement(By.name("loginButton")).click();
-        browser.findElement(By.name("loginbutton")).click();
+        csForm = new ContactSupervisorForm(browser);
+        lForm = new LoginForm(browser);
+        csForm.getKey("001", "Jane Doe");
+        lForm.login();
 
         // Send a message
-        browser.findElement(By.name("targetagent")).sendKeys("002");
-        browser.findElement(By.name("message")).sendKeys(message);
-        browser.findElement(By.name("submitmessage")).click();
+        mForm = new MessagingForm(browser);
+        mForm.sendMessage("002", message);
 
         // Logout agent
-        browser.findElement(By.name("logoutButton")).click();
+        mForm.find("logoutButton").click();
     }
 
     @Then("^the other agent should receive the message (.*)$")
     public void the_other_agent_should_receive_the_message(String message) throws Exception {
 
-        // Login to another agent
+        // Login the agent
         browser.get("localhost:8080/");
-        browser.findElement(By.name("contactButton")).click();
-        browser.findElement(By.name("id")).sendKeys("002");
-        browser.findElement(By.name("name")).sendKeys("Janette Doe");
-        browser.findElement(By.name("getKeyButton")).click();
-        browser.findElement(By.name("loginButton")).click();
-        browser.findElement(By.name("loginbutton")).click();
+        csForm = new ContactSupervisorForm(browser);
+        lForm = new LoginForm(browser);
+        csForm.getKey("002", "Twistee Doe");
+        lForm.login();
 
         // Get next message
-        browser.findElement(By.name("next")).click();
-        assertEquals(message, browser.findElement(By.name("newMessage")).getText());
+        mForm.nextMessage();
+        assertEquals(message, mForm.find("newMessage").getText());
     }
 }
