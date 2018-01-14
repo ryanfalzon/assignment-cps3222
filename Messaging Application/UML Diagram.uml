@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="40.80175438596493" y="543.0">UnitTesting.MessagingSystem</node>
+    <node x="65.3017543859649" y="177.0">UnitTesting.Mailbox</node>
+    <node x="-85.44714912280699" y="-6.0">UnitTesting.Message</node>
+    <node x="207.08333333333337" y="332.0">UnitTesting.Agent</node>
+    <node x="329.7767543859649" y="210.0">UnitTesting.Supervisor</node>
+    <node x="304.7767543859649" y="22.0">UnitTesting.LoginKey</node>
+    <node x="324.87083333333334" y="554.0">UnitTesting.JohnDoe</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="UnitTesting.Message" target="UnitTesting.Agent">
+      <point x="42.75" y="58.5" />
+      <point x="221.802850877193" y="147.0" />
+      <point x="278.8017543859649" y="147.0" />
+      <point x="278.8017543859649" y="312.0" />
+      <point x="267.75" y="312.0" />
+      <point x="-17.333333333333343" y="-80.5" />
+    </edge>
+    <edge source="UnitTesting.JohnDoe" target="UnitTesting.LoginKey">
+      <point x="23.125" y="-58.5" />
+      <point x="440.49583333333334" y="518.0" />
+      <point x="460.0804824561404" y="518.0" />
+      <point x="460.0804824561404" y="157.0" />
+      <point x="411.8767543859649" y="157.0" />
+      <point x="30.59999999999998" y="36.5" />
+    </edge>
+    <edge source="UnitTesting.Agent" target="UnitTesting.Supervisor">
+      <point x="51.99999999999997" y="-80.5" />
+      <point x="337.0833333333333" y="312.0" />
+      <point x="346.94342105263155" y="312.0" />
+      <point x="-34.33333333333334" y="14.5" />
+    </edge>
+    <edge source="UnitTesting.MessagingSystem" target="UnitTesting.Message">
+      <point x="-53.25" y="-69.5" />
+      <point x="94.05175438596493" y="518.0" />
+      <point x="26.0" y="518.0" />
+      <point x="26.0" y="137.0" />
+      <point x="107.80285087719301" y="137.0" />
+      <point x="-71.25" y="58.5" />
+    </edge>
+    <edge source="UnitTesting.MessagingSystem" target="UnitTesting.Agent">
+      <point x="53.25" y="-69.5" />
+      <point x="200.55175438596493" y="518.0" />
+      <point x="246.08333333333337" y="518.0" />
+      <point x="-39.0" y="80.5" />
+    </edge>
+    <edge source="UnitTesting.JohnDoe" target="UnitTesting.Agent">
+      <point x="-69.375" y="-58.5" />
+      <point x="347.99583333333334" y="518.0" />
+      <point x="324.0833333333333" y="518.0" />
+      <point x="38.99999999999997" y="80.5" />
+    </edge>
+    <edge source="UnitTesting.Supervisor" target="UnitTesting.Agent">
+      <point x="0.0" y="14.5" />
+      <point x="381.2767543859649" y="312.0" />
+      <point x="354.41666666666663" y="312.0" />
+      <point x="69.33333333333329" y="-80.5" />
+    </edge>
+    <edge source="UnitTesting.Supervisor" target="UnitTesting.LoginKey">
+      <point x="0.0" y="-14.5" />
+      <point x="-1.4210854715202004E-14" y="36.5" />
+    </edge>
+    <edge source="UnitTesting.Agent" target="UnitTesting.Message">
+      <point x="-2.8421709430404007E-14" y="-80.5" />
+      <point x="285.0833333333333" y="312.0" />
+      <point x="289.8017543859649" y="312.0" />
+      <point x="289.8017543859649" y="137.0" />
+      <point x="250.302850877193" y="137.0" />
+      <point x="71.25" y="58.5" />
+    </edge>
+    <edge source="UnitTesting.Mailbox" target="UnitTesting.Message">
+      <point x="50.75" y="-47.5" />
+      <point x="217.5517543859649" y="157.0" />
+      <point x="193.302850877193" y="157.0" />
+      <point x="14.25" y="58.5" />
+    </edge>
+    <edge source="UnitTesting.Agent" target="UnitTesting.LoginKey">
+      <point x="34.66666666666666" y="-80.5" />
+      <point x="319.2767543859649" y="157.0" />
+      <point x="350.6767543859649" y="157.0" />
+      <point x="-30.60000000000001" y="36.5" />
+    </edge>
+    <edge source="UnitTesting.Agent" target="UnitTesting.Mailbox">
+      <point x="-34.66666666666666" y="-80.5" />
+      <point x="250.41666666666669" y="292.0" />
+      <point x="217.5517543859649" y="292.0" />
+      <point x="50.75" y="47.5" />
+    </edge>
+    <edge source="UnitTesting.JohnDoe" target="UnitTesting.Supervisor">
+      <point x="-23.125" y="-58.5" />
+      <point x="394.24583333333334" y="518.0" />
+      <point x="415.61008771929824" y="518.0" />
+      <point x="34.33333333333334" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="248.5" y="351.0" />
+  <SelectedNodes>
+    <node>UnitTesting.Message</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

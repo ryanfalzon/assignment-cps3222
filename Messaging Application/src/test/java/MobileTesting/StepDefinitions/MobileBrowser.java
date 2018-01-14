@@ -3,18 +3,13 @@ package MobileTesting.StepDefinitions;
 import MobileTesting.MobilePageObjects.MobileContactSupervisorForm;
 import MobileTesting.MobilePageObjects.MobileLoginForm;
 import MobileTesting.MobilePageObjects.MobileMessagingForm;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.RemoteWebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import servlets.StaticVariables;
 
 import java.net.MalformedURLException;
