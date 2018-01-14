@@ -26,7 +26,7 @@
 <div class="container">
     <h2 name="approval">Request Not Approved</h2>
     <form action="/contactsupervisor.jsp" method="post">
-        <input type="submit" value="Retry Contacting Supervisor" name="backButton"><br /><br />
+        <input class="button" type="submit" value="Retry Contacting Supervisor" name="backButton"><br /><br />
     </form>
 </div>
 </body>

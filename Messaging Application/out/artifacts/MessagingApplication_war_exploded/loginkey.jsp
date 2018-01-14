@@ -20,6 +20,11 @@
             width: 75%;
             clear: both;
         }
+        .button {
+            width: 100%;
+            height: 75px;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -30,7 +35,7 @@
     <h3 name="name">Agent Name: ${name}</h3>
     <h3 name="loginkey">Login Key: ${loginkey}</h3>
     <form action="/loginkeypage" method="post">
-        <input type="submit" value="Continue To Login" name="loginButton"><br /><br />
+        <input class="button" type="submit" value="Continue To Login" name="loginButton"><br /><br />
     </form>
 </div>
 </body>

@@ -20,6 +20,11 @@
             width: 100%;
             clear: both;
         }
+        .button {
+            width: 100%;
+            height: 75px;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -32,8 +37,8 @@
             <input type="text" name="id"><br />
             <label>Name</label>
             <input type="text" name="name"><br /><br />
-            <input type="submit" value="Get Login Key" name="getKeyButton"><br /><br />
-            <input type="submit" value="Back To Main Menu" name="backButton">
+            <input class="button" type="submit" value="Get Login Key" name="getKeyButton"><br /><br />
+            <input class="button" type="submit" value="Back To Main Menu" name="backButton">
         </form>
     </div>
 </body>

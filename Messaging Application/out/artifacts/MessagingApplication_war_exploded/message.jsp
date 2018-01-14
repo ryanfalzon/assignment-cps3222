@@ -24,6 +24,11 @@
         .error{
             color: red;
         }
+        .button {
+            width: 100%;
+            height: 75px;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -36,18 +41,18 @@
         <input type="text" name="targetagent"><br /><br />
         <textarea rows="4" cols="50" name="message"></textarea><br />
         <p name="error" class="error">${error}</p>
-        <input type="submit" value="Ok" name="errorButton" hidden>
-        <input type="submit" value="Submit Message" name="submitmessage">
+        <input class="button" type="submit" value="Ok" name="errorButton" hidden>
+        <input class="button" type="submit" value="Submit Message" name="submitmessage">
     </form>
     <form action="/mailbox" method="post">
-        <input type="submit" value="Check If You Have Messages" name="count">
+        <input class="button" type="submit" value="Check If You Have Messages" name="count">
         <p name="checkCount">${hasmessages}</p>
-        <input type="submit" value="Get Next Message" name="next">
+        <input class="button" type="submit" value="Get Next Message" name="next">
         <h4>Current Message</h4>
         <p name="newMessage">${message}</p>
     </form>
     <form action="/logout" method="post">
-        <input type="submit" value="Logout" name="logoutButton"><br /><br />
+        <input class="button" type="submit" value="Logout" name="logoutButton"><br /><br />
     </form>
 </div>
 </body>

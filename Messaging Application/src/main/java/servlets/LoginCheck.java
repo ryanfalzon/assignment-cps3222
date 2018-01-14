@@ -33,6 +33,7 @@ public class LoginCheck extends HttpServlet {
                 MessagingSystem system = new MessagingSystem();
                 String message = system.login(current, request.getParameter("loginkey"));
                 if (message.equals("Login Successful")) {
+                    StaticVariables.currentUserID = current.getId();
                     session.setAttribute("id", current.getId());
                     session.setAttribute("error", "");
                     session.setAttribute("hasmessages", "");

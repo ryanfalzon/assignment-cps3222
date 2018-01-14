@@ -22,7 +22,7 @@ public class Logout extends HttpServlet {
         // Search for source agent
         Agent sourceAgent = null;
         for(int i = 0; i < StaticVariables.agents.size(); i++){
-            if(StaticVariables.agents.get(i).getId().equals(session.getAttribute("id"))){
+            if(StaticVariables.agents.get(i).getId().equals(StaticVariables.currentUserID)){
                 sourceAgent = StaticVariables.agents.get(i);
             }
         }
@@ -31,6 +31,7 @@ public class Logout extends HttpServlet {
         system.logout(sourceAgent);
         StaticVariables.agents.remove(sourceAgent);
         session.setAttribute("approval", "");
+        StaticVariables.currentUserID = "";
         session.setAttribute("id", "");
         session.setAttribute("name", "");;
         session.setAttribute("loginkey", "");

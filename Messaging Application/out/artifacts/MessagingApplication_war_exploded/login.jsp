@@ -23,6 +23,11 @@
         .container p{
             color: red;
         }
+        .button {
+            width: 100%;
+            height: 75px;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -36,8 +41,8 @@
         <label>Login Key</label>
         <input type="text" name="loginkey" value="${loginkey}"><br />
         <p name="error">${errorlogin}</p>
-        <input type="submit" value="Login" name="loginbutton"><br /><br />
-        <input type="submit" value="Back To Main Menu" name="backButton">
+        <input class="button" type="submit" value="Login" name="loginbutton"><br /><br />
+        <input class="button" type="submit" value="Back To Main Menu" name="backButton">
     </form>
 </div>
 </body>

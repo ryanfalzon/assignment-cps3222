@@ -38,12 +38,13 @@ public class SendMessage extends HttpServlet {
 
         // Search for source agent
         for(int i = 0; i < StaticVariables.agents.size(); i++){
-            if(StaticVariables.agents.get(i).getId().equals(session.getAttribute("id"))){
+            if(StaticVariables.agents.get(i).getId().equals(StaticVariables.currentUserID)){
                 sourceAgent = StaticVariables.agents.get(i);
             }
         }
 
         // Send message
+        out.write("Session ID: " + StaticVariables.sessionId);
         session.setAttribute("error", system.sendMessage(sourceAgent, targetAgent, request.getParameter("message")));
         session.setAttribute("hasmessages", "");
         session.setAttribute("message", "");

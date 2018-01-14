@@ -13,6 +13,7 @@ public class StaticVariables {
     public static List<String> keys = new ArrayList<String>();
     public static List<Mailbox> mailboxes = new ArrayList<Mailbox>();
     public static String sessionId;
+    public static String currentUserID;
 
     // Static method to erase all lists
     public static void Erase(){
