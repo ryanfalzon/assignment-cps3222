@@ -8,6 +8,7 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/web/loginkeyerror.jsp" line="26" />
     <bookmark url="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileMessagingForm.java" line="8" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java" line="349" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a496d794-4309-4b0b-a546-f041f3c8fe07" name="Default" comment="" />
@@ -24,7 +25,7 @@
     <SUITE FILE_PATH="coverage/Messaging_Application$LoginKeyTests.coverage" NAME="LoginKeyTests Coverage Results" MODIFIED="1515536404088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>UnitTesting.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Messaging_Application$UnitTesting_in_MessagingApplication.coverage" NAME="UnitTesting in MessagingApplication Coverage Results" MODIFIED="1515745728110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Messaging_Application$UnitTesting_in_MessagingApplication.coverage" NAME="UnitTesting in MessagingApplication Coverage Results" MODIFIED="1517905046730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>UnitTesting.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Messaging_Application$Feature__webapp.coverage" NAME="Feature: webapp Coverage Results" MODIFIED="1515253987486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -94,129 +95,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MobileBrowser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/StepDefinitions/MobileBrowser.java">
+      <file leaf-file-name="SystemModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="626">
+              <caret line="356" column="35" lean-forward="false" selection-start-line="356" selection-start-column="35" selection-end-line="356" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UML Diagram.uml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UML Diagram.uml">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="274.5875" y="563.0">UnitTesting.MessagingSystem</node>
-                <node x="212.9625" y="187.0">UnitTesting.Mailbox</node>
-                <node x="296.7385964912281" y="0.0">UnitTesting.Message</node>
-                <node x="185.7125" y="352.0">UnitTesting.Agent</node>
-                <node x="77.9625" y="220.0">UnitTesting.Supervisor</node>
-                <node x="52.962500000000006" y="22.0">UnitTesting.LoginKey</node>
-                <node x="0.0" y="574.0">UnitTesting.JohnDoe</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="UnitTesting.Message" target="UnitTesting.Agent">
-                  <point x="-14.25" y="58.5" />
-                  <point x="367.9885964912281" y="157.0" />
-                  <point x="426.4625" y="157.0" />
-                  <point x="426.4625" y="312.0" />
-                  <point x="298.3791666666667" y="312.0" />
-                  <point x="34.666666666666686" y="-80.5" />
-                </edge>
-                <edge source="UnitTesting.JohnDoe" target="UnitTesting.LoginKey">
-                  <point x="-69.375" y="-58.5" />
-                  <point x="23.125" y="538.0" />
-                  <point x="37.894298245614095" y="538.0" />
-                  <point x="37.894298245614095" y="157.0" />
-                  <point x="68.26250000000002" y="157.0" />
-                  <point x="-61.19999999999999" y="36.5" />
-                </edge>
-                <edge source="UnitTesting.Agent" target="UnitTesting.Supervisor">
-                  <point x="-69.33333333333331" y="-80.5" />
-                  <point x="194.3791666666667" y="332.0" />
-                  <point x="129.4625" y="332.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="UnitTesting.MessagingSystem" target="UnitTesting.Message">
-                  <point x="53.25" y="-69.5" />
-                  <point x="434.3375" y="538.0" />
-                  <point x="470.64583333333337" y="538.0" />
-                  <point x="470.64583333333337" y="167.0" />
-                  <point x="453.4885964912281" y="167.0" />
-                  <point x="71.25" y="58.5" />
-                </edge>
-                <edge source="UnitTesting.MessagingSystem" target="UnitTesting.Agent">
-                  <point x="-53.25" y="-69.5" />
-                  <point x="327.8375" y="538.0" />
-                  <point x="302.71250000000003" y="538.0" />
-                  <point x="39.0" y="80.5" />
-                </edge>
-                <edge source="UnitTesting.JohnDoe" target="UnitTesting.Agent">
-                  <point x="69.375" y="-58.5" />
-                  <point x="161.875" y="538.0" />
-                  <point x="224.7125" y="538.0" />
-                  <point x="-39.0" y="80.5" />
-                </edge>
-                <edge source="UnitTesting.Supervisor" target="UnitTesting.Agent">
-                  <point x="34.33333333333337" y="14.5" />
-                  <point x="163.79583333333338" y="322.0" />
-                  <point x="211.71250000000003" y="322.0" />
-                  <point x="-51.99999999999997" y="-80.5" />
-                </edge>
-                <edge source="UnitTesting.Supervisor" target="UnitTesting.LoginKey">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="36.5" />
-                </edge>
-                <edge source="UnitTesting.Agent" target="UnitTesting.Message">
-                  <point x="51.99999999999999" y="-80.5" />
-                  <point x="315.7125" y="322.0" />
-                  <point x="437.4625" y="322.0" />
-                  <point x="437.4625" y="147.0" />
-                  <point x="396.4885964912281" y="147.0" />
-                  <point x="14.25" y="58.5" />
-                </edge>
-                <edge source="UnitTesting.Mailbox" target="UnitTesting.Message">
-                  <point x="50.75" y="-47.5" />
-                  <point x="365.2125" y="167.0" />
-                  <point x="339.4885964912281" y="167.0" />
-                  <point x="-42.75" y="58.5" />
-                </edge>
-                <edge source="UnitTesting.Agent" target="UnitTesting.LoginKey">
-                  <point x="-34.66666666666663" y="-80.5" />
-                  <point x="229.04583333333338" y="312.0" />
-                  <point x="191.4625" y="312.0" />
-                  <point x="191.4625" y="167.0" />
-                  <point x="160.06249999999997" y="167.0" />
-                  <point x="30.599999999999966" y="36.5" />
-                </edge>
-                <edge source="UnitTesting.Agent" target="UnitTesting.Mailbox">
-                  <point x="17.333333333333343" y="-80.5" />
-                  <point x="281.04583333333335" y="302.0" />
-                  <point x="365.2125" y="302.0" />
-                  <point x="50.75" y="47.5" />
-                </edge>
-                <edge source="UnitTesting.JohnDoe" target="UnitTesting.Supervisor">
-                  <point x="23.125" y="-58.5" />
-                  <point x="115.625" y="538.0" />
-                  <point x="95.12916666666669" y="538.0" />
-                  <point x="-34.333333333333314" y="14.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="-239.0" y="147.0" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Fields</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
+      <file leaf-file-name="States.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/States.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgentTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UnitTesting/AgentTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-510">
+              <caret line="92" column="19" lean-forward="true" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagingSystemTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UnitTesting/MessagingSystemTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="93" column="51" lean-forward="true" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webapp.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/Features/webapp.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebAppStepDefs.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/StepDefinitions/WebAppStepDefs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="80" column="8" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/LoginForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagingForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/MessagingForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MobileForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1207">
+              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -269,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/Form.java" />
         <option value="$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/LoginForm.java" />
         <option value="$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/MessagingForm.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/ContactSupervisor.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoginCheck.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/Logout.java" />
@@ -299,6 +272,7 @@
         <option value="$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileMessagingForm.java" />
         <option value="$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileLoginForm.java" />
         <option value="$PROJECT_DIR$/src/test/java/MobileTesting/StepDefinitions/MobileBrowser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java" />
       </list>
     </option>
   </component>
@@ -374,6 +348,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -403,14 +381,6 @@
               <item name="Messaging Application" type="b2602c69:ProjectViewProjectNode" />
               <item name="Messaging Application" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="UnitTesting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Messaging Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Messaging Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -419,6 +389,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Messaging Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Messaging Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ModelTesting" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Messaging Application" type="b2602c69:ProjectViewProjectNode" />
@@ -429,10 +407,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -469,7 +443,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AutomatedWebTesting in MessagingApplication">
+  <component name="RunManager" selected="JUnit.SystemModel">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -489,52 +463,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="Scenario: Blocked words" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="myFilePath" value="$PROJECT_DIR$/src/test/java/MobileTesting/MobileFeatures/mobileapp.feature" />
-      <option name="GLUE" value="MobileTesting.StepDefinitions AutomatedWebTesting.StepDefinitions" />
-      <option name="myNameFilter" value="^Blocked words$" />
-      <option name="myGeneratedName" value="Scenario: Blocked words" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter --monochrome --name &quot;^Blocked words$&quot;" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MessagingApplication" />
-      <envs />
-    </configuration>
-    <configuration name="Scenario: Successful Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="myFilePath" value="$PROJECT_DIR$/src/test/java/MobileTesting/MobileFeatures/mobileapp.feature" />
-      <option name="GLUE" value="AutomatedWebTesting.StepDefinitions" />
-      <option name="myNameFilter" value="^Successful Login$" />
-      <option name="myGeneratedName" value="Scenario: Successful Login" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm2SMFormatter --monochrome --name &quot;^Successful Login$&quot;" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MessagingApplication" />
       <envs />
     </configuration>
     <configuration name="AutomatedWebTesting in MessagingApplication" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -562,6 +490,31 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="CucumberRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="AutomatedWebTesting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MessagingApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="AutomatedWebTesting" />
+      <option name="MAIN_CLASS_NAME" value="AutomatedWebTesting.CucumberRunner" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="MobileCucumberRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -574,6 +527,31 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="MobileTesting" />
       <option name="MAIN_CLASS_NAME" value="MobileTesting.MobileCucumberRunner" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="SystemModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ModelTesting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MessagingApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ModelTesting" />
+      <option name="MAIN_CLASS_NAME" value="ModelTesting.SystemModel" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -747,19 +725,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Local Server" />
-      <item index="1" class="java.lang.String" itemvalue="Cucumber java.Scenario: Successful Login" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MobileCucumberRunner" />
-      <item index="3" class="java.lang.String" itemvalue="Cucumber java.Scenario: Blocked words" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UnitTesting in MessagingApplication" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.AutomatedWebTesting in MessagingApplication" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MobileCucumberRunner" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.UnitTesting in MessagingApplication" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AutomatedWebTesting in MessagingApplication" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SystemModel" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.CucumberRunner" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AutomatedWebTesting in MessagingApplication" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UnitTesting in MessagingApplication" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SystemModel" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CucumberRunner" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.MobileCucumberRunner" />
-        <item index="3" class="java.lang.String" itemvalue="Cucumber java.Scenario: Successful Login" />
-        <item index="4" class="java.lang.String" itemvalue="Cucumber java.Scenario: Blocked words" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.UnitTesting in MessagingApplication" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AutomatedWebTesting in MessagingApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -808,43 +786,46 @@
       <workItem from="1515878028409" duration="15104000" />
       <workItem from="1515920409912" duration="3871000" />
       <workItem from="1515925623525" duration="2828000" />
+      <workItem from="1515945958097" duration="609000" />
+      <workItem from="1517874568531" duration="574000" />
+      <workItem from="1517904985018" duration="4210000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AutomatedWebTesting_in_MessagingApplication - 2018.01.14 at 12h 38m 06s.xml">
-      <configuration name="AutomatedWebTesting in MessagingApplication" configurationId="JUnit" />
+    <history-entry file="CucumberRunner - 2018.02.06 at 09h 20m 46s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 10h 13m 46s.xml">
+    <history-entry file="CucumberRunner - 2018.02.06 at 12h 20m 28s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MobileCucumberRunner - 2018.02.06 at 00h 58m 56s.xml">
       <configuration name="MobileCucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 10h 16m 20s.xml">
+    <history-entry file="MobileCucumberRunner - 2018.02.06 at 09h 41m 39s.xml">
       <configuration name="MobileCucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 10h 17m 23s.xml">
+    <history-entry file="MobileCucumberRunner - 2018.02.06 at 09h 46m 45s.xml">
       <configuration name="MobileCucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 10h 22m 45s.xml">
-      <configuration name="MobileCucumberRunner" configurationId="JUnit" />
+    <history-entry file="SystemModel - 2018.02.06 at 00h 58m 07s.xml">
+      <configuration name="SystemModel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 10h 29m 41s.xml">
-      <configuration name="MobileCucumberRunner" configurationId="JUnit" />
+    <history-entry file="SystemModel - 2018.02.06 at 09h 36m 17s.xml">
+      <configuration name="SystemModel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 10h 31m 19s.xml">
-      <configuration name="MobileCucumberRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 11h 52m 15s.xml">
-      <configuration name="MobileCucumberRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MobileCucumberRunner - 2018.01.14 at 11h 56m 38s.xml">
-      <configuration name="MobileCucumberRunner" configurationId="JUnit" />
+    <history-entry file="SystemModel - 2018.02.06 at 12h 22m 09s.xml">
+      <configuration name="SystemModel" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UnitTesting_in_MessagingApplication - 2018.01.14 at 12h 36m 09s.xml">
       <configuration name="UnitTesting in MessagingApplication" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UnitTesting_in_MessagingApplication - 2018.02.06 at 09h 17m 29s.xml">
+      <configuration name="UnitTesting in MessagingApplication" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225118000" />
+    <option name="totallyTimeSpent" value="230511000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -870,18 +851,19 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39782608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.4969605" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36739132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5559211" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4227079" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21748401" sideWeight="0.4522727" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2238806" sideWeight="0.4522727" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19832827" sideWeight="0.5477273" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.193769" sideWeight="0.51644737" order="2" side_tool="true" content_ui="tabs" />
@@ -890,7 +872,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42313322" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -941,27 +922,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/Mailbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="60" column="7" lean-forward="false" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/JohnDoe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/UnitTesting/LoginKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1052,32 +1012,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/LoginForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="39" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="224" column="5" lean-forward="true" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UnitTesting/LoginKeyTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,15 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#237#238#0" expanded="false" />
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#387#388#0" expanded="false" />
-            <element signature="e#648#649#0" expanded="false" />
-            <element signature="e#692#693#0" expanded="false" />
-            <element signature="e#943#944#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1221,33 +1150,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobileCucumberRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileLoginForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#738#739#0" expanded="false" />
-            <element signature="e#918#919#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/Features/webapp.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1258,31 +1164,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/StepDefinitions/WebAppStepDefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="80" column="8" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/Form.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/MessagingForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1401,11 +1286,99 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/StepDefinitions/MobileBrowser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="170">
           <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobileCucumberRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UnitTesting/AgentTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="92" column="19" lean-forward="true" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UnitTesting/MessagingSystemTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="93" column="51" lean-forward="true" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/Features/webapp.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/StepDefinitions/WebAppStepDefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="80" column="8" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AutomatedWebTesting/PageObjects/MessagingForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MobileTesting/MobilePageObjects/MobileForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/States.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ModelTesting/SystemModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="356" column="35" lean-forward="false" selection-start-line="356" selection-start-column="35" selection-end-line="356" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

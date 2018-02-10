@@ -15,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import servlets.ContactSupervisor;
 import servlets.StaticVariables;
 
+import javax.xml.datatype.Duration;
+import java.time.Instant;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
@@ -343,6 +345,12 @@ public class SystemModel implements FsmModel {
 
     @Test
     public void MessagingSystemModelRunner() {
+
+        // Some metrics for duration
+        final java.time.Duration TEST_DURATION = java.time.Duration.ofMinutes(15);
+        final Instant startTime = Instant.now();
+        final Instant finishTime = startTime.plus(TEST_DURATION);
+
         final Tester tester = new GreedyTester(new SystemModel());
         tester.setRandom(new Random());
         tester.buildGraph();
@@ -351,7 +359,9 @@ public class SystemModel implements FsmModel {
         tester.addCoverageMetric(new TransitionPairCoverage());
         tester.addCoverageMetric(new StateCoverage());
         tester.addCoverageMetric(new ActionCoverage());
-        tester.generate(10000);
+        while (Instant.now().isBefore(finishTime)) {
+            tester.generate();
+        }
         tester.printCoverage();
     }
 }
